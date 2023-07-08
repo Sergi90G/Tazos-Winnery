@@ -5,6 +5,7 @@ from src.views.auth.forms import RegisterForm, LoginForm
 from src.models import User
 from flask_login import login_user, logout_user
 
+
 TEMPLATES_FOLDER = path.join(Config.BASE_DIRECTORY, "templates", "auth")
 auth_blueprint = Blueprint("auth",__name__,template_folder=TEMPLATES_FOLDER)
 
@@ -33,6 +34,7 @@ def login():
             return redirect(url_for("auth.login"))
 
         if user.check_password(form.password.data):
+            flash("წარმატებით დალოგინდით!")
             login_user(user)
             next = request.args.get("next")
             if next:

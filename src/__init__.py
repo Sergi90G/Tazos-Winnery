@@ -2,7 +2,7 @@ from flask import Flask
 from flask_admin.menu import MenuLink
 from src.config import Config
 from src.extensions import db, migrate, login_manager
-from src.models import User, Product, Role, Student, University
+from src.models import User, Product, Role
 from src.views import main_blueprint, auth_blueprint, product_blueprint
 from src.commands import init_db, populate_db
 from src.admin import admin, SecureModelView, UserView, ProductView
@@ -12,6 +12,7 @@ from flask_admin.contrib.sqla import ModelView
 
 BLUEPRINTS = [main_blueprint, auth_blueprint, product_blueprint]
 COMMANDS = [init_db, populate_db]
+
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)

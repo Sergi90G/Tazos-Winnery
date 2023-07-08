@@ -8,14 +8,11 @@ class RegisterForm(FlaskForm):
     username = StringField("username", validators=[(DataRequired())])
     password = PasswordField("password",validators=[DataRequired(), length(min=5, max=15, message="შეიყვანეთ მინიმუმ 5 და მაქსიმუმ 15 სიმბოლო")])
     gender = RadioField("აირჩიეთ სქესი", choices=["მამრობითი","მდედრობითი"], validators=[(DataRequired())])
-    birthday=DateField("დაბადების თარიღი",validators=[(DataRequired())])
-    sports = SelectField("აირჩიეთ აქტივობა",choices=["ჩამონათვალი","იოგა","ქროსფითი","პილატესი","ძიუდო","ფიტნესი"], validators=[(DataRequired())])
-    submit = SubmitField("რეგისტრაცია")
+    birthday = DateField("დაბადების თარიღი",validators=[(DataRequired())])
     repeat_password = PasswordField("repeat password", validators=[DataRequired(),equal_to("password",message="პაროელები არ ემთხვევა")])
-    range = IntegerRangeField("შეიყვანეთ წონა",
-                              render_kw={"min": 40, "max": 200})
+    submit = SubmitField("რეგისტრაცია")
 
 class AboutForm(FlaskForm):
-    texstarea = TextAreaField("რა არის თქვენი მიზანი?")
-    texstareatwo = TextAreaField("გაქვთ თუ არა საკმარისი მოტივაცია?")
+    texstarea = TextAreaField("უკუკავშირი. რა მოგეწონათ ან არ მოგეწონათ ჩვენთან?")
+    texstareatwo = TextAreaField("რომელი ღვინო მოგეწონათ?")
     send = SubmitField("გაგზავნა")

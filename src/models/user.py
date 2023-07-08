@@ -16,8 +16,7 @@ class User(db.Model, BaseModel, UserMixin):
     role_id = db.Column(db.ForeignKey("roles.id"))
     role = db.relationship("Role", uselist=False)
 
-    idcard_id = db.Column(db.ForeignKey("id_cards.id"))
-    idcard = db.relationship("IDCard", back_populates="user")
+
 
     @property
     def password(self):
@@ -28,17 +27,18 @@ class User(db.Model, BaseModel, UserMixin):
         self._password = generate_password_hash(value)
 
 
-def check_password(self, password):
-    return check_password_hash(self.password, password)
+    def check_password(self, password):
+      return check_password_hash(self.password, password)
 
 
-def __init__(self, username, password):
-    self.password = password
-    self.username = username
+    def __init__(self, username, password, role_id):
+       self.password = password
+       self.username = username
+       self.role_id = role_id
 
 
-def __repr__(self):
-    return f"შეყვანილი მონაცემებია: {self.username}{self.password}"
+    def __repr__(self):
+       return f"შეყვანილი მონაცემებია: {self.username}{self.password}"
 
 
 class Role(db.Model, BaseModel):
@@ -51,15 +51,3 @@ class Role(db.Model, BaseModel):
     def __repr__(self):
         return f"{self.name}"
 
-class IDCard(db.Model):
-    __tablename__ = "id_cards"
-
-    id = db.Column(db.Integer, primary_key=True)
-    id_number = db.Column(db.String, unique=True)
-    creation_date = db.Column(db.Date)
-    expiry_date = db.Column(db.Date)
-
-    user = db.relationship("User", back_populates="idcard")
-
-    def __repr__(self):
-        return f"პირადობა, ნომრით {self.id_number}"

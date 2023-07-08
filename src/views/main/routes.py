@@ -33,7 +33,6 @@ def index():
 def about():
     form = AboutForm()
     if form.validate_on_submit():
-       print(form.texstarea.data)
-       print(form.texstareatwo.data)
-    names = ["fitness", "yoga", "crossfit", "pilates", "judo"]
-    return render_template("about.html", list_of_names=names, form=form)
+     flash("Form submitted successfully!")
+
+    return render_template("about.html", form=form)

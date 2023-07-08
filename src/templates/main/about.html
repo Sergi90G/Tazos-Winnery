@@ -1,17 +1,20 @@
 {% extends "layout/base.html" %}
 {% block body %}
-<div class="container mt-4"> <h1>მოგესალმები საიტზე</h1>
+<div class="container mt-4"> <h1>Tazo's Winnery</h1>
 <hr>
-<i><b><p>საიტზე შეყვანილი ინფორმაცია კონფიდენციალურია</p></b></i>
+<i><b><p>საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,
+    ქართული ვაზის ჯიშებისგან ტრადიციული მეთოდებით დაყენებული ღვინო წარმოადგენს ჩვენს პროდუქტს.
+    ჩვენი მთავარ მიზანია ხარისხი და არა რაოდენობა.
+    საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს განთავსებას, გასტრონომიას.  </p></b></i>
 <hr>
 </div>
 <form>
 <div class="container mt-4 bg-light rounded-3 shadow">
 
 <ol>
-    <li>რა არის თქვენი მიზანი?</li>
+    <li>უკუკავშირი. რა მოგეწონათ ან არ მოგეწონათ ჩვენთან?</li>
     <textarea placeholder="პასუხი აქ ჩაწერეთ" cols="40" rows="5"></textarea>
-    <li>გაქვთ თუ არა საკმარისი მოტივაცია?</li>
+    <li>რომელი ღვინო მოგეწონათ?</li>
     <textarea placeholder="პასუხი აქ ჩაწერეთ" cols="40" rows="5"></textarea>
 </ol>
 <hr>
@@ -19,22 +22,19 @@
 </form>
 
     <div class="container mt-4 bg-light rounded-3 shadow">
-<section>]
-<img src="https://c4.wallpaperflare.com/wallpaper/56/1002/394/anime-how-heavy-are-the-dumbbells-you-lift-hd-wallpaper-preview.jpg"
-     width="400"
-     height="300"
-     alt="picture"/>
-</section>
+       <section>]
+     <img src="https://lh3.googleusercontent.com/a-/AD_cMMQVwxnx6qcEXsbDjo8mw-Pv1uCFYgiz-gAjyD1aE9DbBg=w66-h66-p-rp-mo-br100"
+       width="400"
+       height="300"
+       alt="picture"/>
+       </section>
     </div>
 <div class="card container mt-4 bg-light rounded-3 shadow" style="width: 18rem;">
-  <img src="https://img.freepik.com/premium-vector/fitness-concept_1133-512.jpg?w=740" class="card-img-top" alt="ფიტნეს აბონიმენტი">
+  <img src="https://img.freepik.com/premium-vector/fitness-concept_1133-512.jpg?w=740" class="card-img-top" alt="პროდუქტი">
   <div class="card-body">
-    <h5 class="card-title">ფიტნეს აბონიმენტის ფასი</h5>
-    <p class="card-text">1 თვე 150ლარი</p>
+    <h5 class="card-title">ციცქა</h5>
+    <p class="card-text">7GEl</p>
     <a href="#" class="btn btn-primary">შეძენა</a>
   </div>
 </div>
-    {% for names in list_of_names %}
-<p>ჩვენ გთვაზობთ ჯგუფურ ვარჯიშებს {{names}} -ში</p>
-{% endfor %}
 {% endblock %}
