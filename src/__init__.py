@@ -1,7 +1,7 @@
-from flask import Flask
+from flask import Flask, session
 from flask_admin.menu import MenuLink
 from src.config import Config
-from src.extensions import db, migrate, login_manager
+from src.extensions import db, migrate, login_manager, babel
 from src.models import User, Product, Role
 from src.views import main_blueprint, auth_blueprint, product_blueprint
 from src.commands import init_db, populate_db
@@ -28,6 +28,17 @@ def register_extensions(app):
     migrate.init_app(app, db)
     login_manager.init_app(app)
     login_manager.login_view = "auth.login"
+
+
+    def get_locale():
+        if 'locale' not in session.keys():
+         session['locale'] = 'ka'
+        return session['locale']
+
+    # flask-babel
+    babel.init_app(app, locale_selector=get_locale)
+
+
 
     admin.init_app(app)
     admin.add_view(UserView(User, db.session))

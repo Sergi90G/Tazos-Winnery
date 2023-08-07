@@ -1,7 +1,9 @@
 from flask.cli import with_appcontext
 import click
 from src.extensions import db
-from src.models import Product, User, Role
+from src.models import  User, Role, Product
+
+
 
 
 @click.command("init_db")
@@ -22,6 +24,7 @@ def populate_db():
         product.create(commit=False)
     Product.save()
 
+
     roles = ["admin", "moderator", "member"]
     for role in roles:
         new_role = Role(name=role)
@@ -30,7 +33,5 @@ def populate_db():
     admin_user = User(username="admin", password="Password123!", role_id=1)
     admin_user.create()
 
-
     click.echo("Products created")
-
 

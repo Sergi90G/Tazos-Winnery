@@ -1,30 +1,51 @@
 {% extends "layout/base.html" %}
 {% block body %}
+       <style> body {
+  background-image: url('https://t3.ftcdn.net/jpg/01/04/20/18/240_F_104201889_akJ4gafyCdIkgvAy7ZGxbtxXoPkcBryb.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}</style>
+     {% set messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+            * {{ message }}
+            </div>
+
+        {% endfor %}
+{% endif %}
+
+    {% if current_user.is_authenticated %}
+    {{ _("გამარჯობა") }}, {{current_user.username }}
+    {% endif %}
     <div  style="text-align: center; background-color: aliceblue;" class="container mt-4"> <h1>Tazo's Winnery</h1>
 <hr>
-<i><b><p>საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,
+<i><b><p>{{ _("საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,
     ქართული ვაზის ჯიშებისგან ტრადიციული მეთოდებით დაყენებული ღვინო წარმოადგენს ჩვენს პროდუქტს.
     ჩვენი მთავარ მიზანია ხარისხი და არა რაოდენობა.
-    საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს განთავსებას, გასტრონომიას.  </p></b></i>
+    საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს განთავსებას, გასტრონომიას.") }}  </p></b></i>
 <hr>
-        <div class="slideshow-container">
+        <a href="{{ url_for('main.about') }}" class="btn btn-dark">ვრცლად</a>
 
+
+        <div class="slideshow-container">
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="{{ url_for('static', filename='images/wine1.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='uploads/wine1.jpg') }}" style="width:100%">
     <div class="text">Caption Text</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="{{ url_for('static', filename='images/wine2.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='uploads/wine2.jpg') }}" style="width:100%">
     <div class="text">Caption Two</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 3</div>
-    <img src="{{ url_for('static', filename='images/wine3.jpg') }}" style="width:100%">
+    <img src="{{ url_for('static', filename='uploads/wine3.jpg') }}" style="width:100%">
     <div class="text">Caption Three</div>
   </div>
 
@@ -40,30 +61,21 @@
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
 </div>
-        <b>Contact Us</b>
+        <b>{{ _("Contact Us") }}</b>
     <hr>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16732.72586762519!2d42.26604198277017!3d42.151228752779964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405cffa9dadd8d03%3A0x1c8c218b5785675d!2sTazo&#39;
 s%20Marani!5e0!3m2!1ska!2sge!4v1690825957562!5m2!1ska!2sge" width="900" height="350" style="border:0;"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </div>
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <hr>
-    <b>Contact</b><br>
+
+    <b>{{ _("Contact") }}</b><br>
     <a href="tel:+995-598-12-90-99" data-tracking-element-type="3"
-       jslog="56037; track:impression,click" itemprop="telephone" class="btn btn-success">Call now</a><br>
+       jslog="56037; track:impression,click" itemprop="telephone" class="btn btn-dark">Call now</a><br>
     <b>598-12-90-99</b>
-
-    {% set messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-danger" role="alert">
-            * {{ message }}
-            </div>
-
-        {% endfor %}
-{% endif %}
-
-    {% if current_user.is_authenticated %}
-    hello {{current_user.username }}
-    {% endif %}
+    <a class="btn btn-dark"
+       href="https://www.google.com/maps/dir//Tazo%27s+Marani/data=!4m8!4m7!1m0!1m5!1m1!1s0x405cffa9dadd8d03:0x1c8c218b5785675d!2m2!1d42.281692899999996!2d42.1490904"
+       target="_blank" data-tracking-element-type="6" jslog="56039; track:impression,click">Get directions</a>
+    </div>
 
 {% endblock %}
 

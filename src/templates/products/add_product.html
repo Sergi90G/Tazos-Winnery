@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 
 {% block title %}
-   wine products
+  add products
 {% endblock %}
 
 {% block body %}
@@ -31,6 +31,10 @@
             <div class="mb-3">
                 {{ form.price.label(class="form-label") }}
                 {{ form.price(class="form-control") }}
+            </div>
+            <div class="mb-3">
+                {{ form.photo.label(class="form-label") }}
+                {{ form.photo(class="form-control") }}
             </div>
             {{ form.submit(class="btn btn-primary") }}
         </div>

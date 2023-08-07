@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint, flash, url_for
+from flask import render_template, Blueprint, flash, url_for, session, redirect
 from os import path
 from uuid import uuid4
 from flask_login import current_user
@@ -36,3 +36,12 @@ def about():
      flash("Form submitted successfully!")
 
     return render_template("about.html", form=form)
+
+@main_blueprint.route("/change_language")
+def change_language():
+    if session['locale'] == 'ka':
+        session['locale'] = 'en'
+    else:
+        session['locale'] = 'ka'
+
+    return redirect(url_for('main.index'))

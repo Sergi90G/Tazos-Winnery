@@ -1,13 +1,19 @@
-from flask import render_template, Blueprint, flash, redirect, url_for
+import os
+from flask import render_template, Blueprint, flash, redirect, url_for, request, app
 from flask_login import login_required
+from werkzeug.utils import secure_filename
+from src import db
 from src.views.products.forms import ProductForm
 from src.models import Product
 from src.config import Config
 from os import path
 
 
+
 TEMPLATES_FOLDER = path.join(Config.BASE_DIRECTORY, "templates", "products")
 product_blueprint = Blueprint("products", __name__, template_folder=TEMPLATES_FOLDER)
+
+
 
 
 @product_blueprint.route("/products")
@@ -51,6 +57,20 @@ def delete_product(id):
     product.delete()
     flash("პროდუქტი წაიშალა")
     return redirect(url_for('products.all_products'))
+
+@product_blueprint.route('/products_images/<int:id>', methods=['GET', 'POST'])
+@login_required
+def products_images(id):
+    product = Product.query.get(id)
+    if request.method == 'POST':
+        uploaded_file = request.files['uploads']
+        if uploaded_file:
+            filename = secure_filename(uploaded_file.filename)
+            uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            product.image_url = f'/static/uploads/{filename}'
+            db.session.commit()
+
+    return redirect(url_for('products.view_product', id=id))
 
 
 @product_blueprint.route("/products/<int:id>")
