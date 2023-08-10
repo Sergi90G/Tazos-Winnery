@@ -43,3 +43,9 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+  .d-inline-block {
+    margin: 0;
+    padding: 0;
+  }
+

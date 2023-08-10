@@ -2,6 +2,7 @@ from flask.cli import with_appcontext
 import click
 from src.extensions import db
 from src.models import  User, Role, Product
+from src.utils import send_email
 
 
 
@@ -34,4 +35,10 @@ def populate_db():
     admin_user.create()
 
     click.echo("Products created")
+
+@click.command("send_email")
+@with_appcontext
+def send_email_command():
+    send_email("სატესტო მეილი", "ეს არის რაღაც სატესტო მეილი ლექციიდან", ["test@yahoo.com"])
+
 

@@ -9,9 +9,11 @@ class User(db.Model, BaseModel, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, nullable=False)
+    email = db.Column(db.String)
     _password = db.Column(db.String)
     gender = db.Column(db.String)
     birthday = db.Column(db.Date)
+    confirmed = db.Column(db.Boolean, default=0)
 
     role_id = db.Column(db.ForeignKey("roles.id"))
     role = db.relationship("Role", uselist=False)
@@ -31,10 +33,7 @@ class User(db.Model, BaseModel, UserMixin):
       return check_password_hash(self.password, password)
 
 
-    def __init__(self, username, password, role_id):
-       self.password = password
-       self.username = username
-       self.role_id = role_id
+
 
 
     def __repr__(self):

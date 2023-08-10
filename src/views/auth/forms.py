@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import StringField, PasswordField, RadioField, DateField, SelectField, TextAreaField, SubmitField, IntegerRangeField
+from wtforms.fields import StringField, PasswordField, RadioField, DateField, SelectField, TextAreaField, SubmitField, IntegerRangeField, EmailField
 from wtforms.validators import DataRequired, equal_to, length, ValidationError
 from string import ascii_uppercase, ascii_lowercase, digits, punctuation
 from src.models import User
@@ -8,6 +8,18 @@ class LoginForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()])
     password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("ავტორიზაცია")
+
+class ResendKeyForm(FlaskForm):
+    email = EmailField("Email")
+    submit = SubmitField("გამოგზავნა")
+
+    def validate_email(self, field):
+        user = User.query.filter_by(email=field.data).first()
+        if not user:
+            raise ValidationError("აღნიშნული ემეილით მომხმარებელი არ იძებნება")
+
+        if user.confirmed:
+            raise ValidationError("მომხმარებელი გააქტიურებულია")
 
 
 
@@ -18,6 +30,7 @@ class RegisterForm(FlaskForm):
     password = PasswordField("password",validators=[DataRequired(), length(min=5, max=15, message="შეიყვანეთ მინიმუმ 5 და მაქსიმუმ 15 სიმბოლო")])
     gender = RadioField("აირჩიეთ სქესი", choices=["მამრობითი","მდედრობითი"], validators=[(DataRequired())])
     birthday = DateField("დაბადების თარიღი",validators=[(DataRequired())])
+    email = EmailField("Email")
     repeat_password = PasswordField("repeat password",
                                     validators=[DataRequired(), equal_to("password", message="პაროელები არ ემთხვევა")])
 
