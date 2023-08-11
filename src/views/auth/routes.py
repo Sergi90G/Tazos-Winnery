@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
 from os import path
 from src.config import Config
-from src.views.auth.forms import RegisterForm, LoginForm,ResendKeyForm
+from src.views.auth.forms import RegisterForm, LoginForm, ResendKeyForm, ResetPasswordForm
 from src.models import User
 from flask_login import login_user, logout_user
 from src.utils import send_email, create_key, confirm_key
@@ -66,21 +66,33 @@ def confirm_email(activation_key):
     login_user(user)
     return redirect(url_for("main.index"))
 
-#@auth_blueprint.route("/reset_password"/"<activation_key>")
-#def reset_password(activation_key):
- #   email = confirm_key(activation_key)
-  #  if not email:
-   #     flash("* აქტივაციის კოდი არასწორია ან გაუვიდა ვადა")
-      #  return redirect(url_for("auth.register"))
+@auth_blueprint.route("/reset_password/<activation_key>", methods=['GET', 'POST'])
+def reset_password(activation_key):
+    email = confirm_key(activation_key)
+    if not email:
+        flash("* აქტივაციის კოდი არასწორია ან გაუვიდა ვადა")
+        return redirect(url_for("auth.register"))
 
-   # user = User.query.filter_by(email=email).first()
-   # if user.confirmed:
-    #    flash("* მომხმარებელი უკვე გააქტიურებულია")
-   #     return redirect(url_for("auth.login"))
+    user = User.query.filter_by(email=email).first()
+    if user.confirmed:
+        flash("* მომხმარებელი უკვე გააქტიურებულია")
+        return redirect(url_for("auth.login"))
 
-   # if form.validate_on_submit():
-   #     user.password = form.new_password.data
-    #    user.save()
+    form = ResetPasswordForm()
+
+    if form.validate_on_submit():
+        user.password = form.new_password.data
+        user.save()
+        flash("Password reset successfully.")
+        return redirect(url_for("auth.login"))
+
+    if form.errors:
+        for errors in form.errors.values():
+            for error in errors:
+                flash(error)
+
+    return render_template("reset_password.html", activation_key=activation_key, form=form)
+
 
 @auth_blueprint.route("/login", methods=["GET", "POST"])
 def login():

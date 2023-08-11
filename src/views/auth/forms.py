@@ -21,6 +21,13 @@ class ResendKeyForm(FlaskForm):
         if user.confirmed:
             raise ValidationError("მომხმარებელი გააქტიურებულია")
 
+class ResetPasswordForm(FlaskForm):
+    new_password = PasswordField("New Password", validators=[
+        DataRequired(),
+        Length(min=5, max=15, message="შეიყვანეთ მინიმუმ 5 და მაქსიმუმ 15 სიმბოლო"),
+        EqualTo('confirm_new_password', message='Passwords must match')
+    ])
+    confirm_new_password = PasswordField("Confirm New Password", validators=[DataRequired()])
 
 
 
