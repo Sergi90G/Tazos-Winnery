@@ -4,7 +4,7 @@ from src.config import Config
 from src.views.auth.forms import RegisterForm, LoginForm, ResendKeyForm, ResetPasswordForm
 from src.models import User
 from flask_login import login_user, logout_user
-from src.utils import send_email, create_key, confirm_key
+from src.utils import send_email, create_key, confirm_key, confirm_password_reset_key, create_password_reset_key
 
 
 TEMPLATES_FOLDER = path.join(Config.BASE_DIRECTORY, "templates", "auth")
@@ -30,7 +30,6 @@ def register():
             for error in errors:
                 flash(error)
     return render_template("register.html", form=form)
-
 @auth_blueprint.route("/resend_key", methods=["GET", "POST"])
 def resend_key():
     form = ResendKeyForm()
@@ -48,7 +47,6 @@ def resend_key():
                 flash(error)
 
     return render_template("resend_key.html", form=form)
-
 @auth_blueprint.route("/confirm_email/<activation_key>")
 def confirm_email(activation_key):
     email = confirm_key(activation_key)
@@ -65,35 +63,6 @@ def confirm_email(activation_key):
     user.save()
     login_user(user)
     return redirect(url_for("main.index"))
-
-@auth_blueprint.route("/reset_password/<activation_key>", methods=['GET', 'POST'])
-def reset_password(activation_key):
-    email = confirm_key(activation_key)
-    if not email:
-        flash("* აქტივაციის კოდი არასწორია ან გაუვიდა ვადა")
-        return redirect(url_for("auth.register"))
-
-    user = User.query.filter_by(email=email).first()
-    if user.confirmed:
-        flash("* მომხმარებელი უკვე გააქტიურებულია")
-        return redirect(url_for("auth.login"))
-
-    form = ResetPasswordForm()
-
-    if form.validate_on_submit():
-        user.password = form.new_password.data
-        user.save()
-        flash("Password reset successfully.")
-        return redirect(url_for("auth.login"))
-
-    if form.errors:
-        for errors in form.errors.values():
-            for error in errors:
-                flash(error)
-
-    return render_template("reset_password.html", activation_key=activation_key, form=form)
-
-
 @auth_blueprint.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
@@ -117,11 +86,41 @@ def login():
                 return redirect(url_for("main.index"))
         else:
             flash("პაროლი არასწორია")
+
+            reset_key = create_password_reset_key(user.email)
+            html = render_template("_reset_password_message.html", reset_key=reset_key)
+            send_email("Password Reset", html, [user.email])
+
     return render_template("login.html", form=form)
-
-
 
 @auth_blueprint.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for("main.index"))
+
+
+@auth_blueprint.route("/reset_password/<reset_key>")
+def reset_password(reset_key):
+    form = ResetPasswordForm()
+    email = confirm_password_reset_key(reset_key)
+    if not email:
+        flash("* აქტივაციის კოდი არასწორია ან გაუვიდა ვადა")
+        return redirect(url_for("auth.register"))
+
+    user = User.query.filter_by(email=email).first()
+    if user.confirmed:
+        flash("* მომხმარებელი უკვე გააქტიურებულია")
+        return redirect(url_for("auth.login"))
+
+    if form.validate_on_submit():
+        user.new_password = form.new_password.data
+        user.confirm_new_password = form.confirm_new_password.data
+        user.save()
+
+    return render_template("reset_password.html", reset_key=reset_key, form=form)
+
+
+
+
+
+

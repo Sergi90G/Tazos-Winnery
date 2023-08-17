@@ -20,6 +20,8 @@ class User(db.Model, BaseModel, UserMixin):
 
 
 
+
+
     @property
     def password(self):
         return self._password
@@ -31,8 +33,6 @@ class User(db.Model, BaseModel, UserMixin):
 
     def check_password(self, password):
       return check_password_hash(self.password, password)
-
-
 
 
 

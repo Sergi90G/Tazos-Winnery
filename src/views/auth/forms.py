@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import StringField, PasswordField, RadioField, DateField, SelectField, TextAreaField, SubmitField, IntegerRangeField, EmailField
+from wtforms.fields import StringField, PasswordField, RadioField, DateField,  SubmitField, EmailField
 from wtforms.validators import DataRequired, equal_to, length, ValidationError
 from string import ascii_uppercase, ascii_lowercase, digits, punctuation
 from src.models import User
@@ -9,6 +9,7 @@ class LoginForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("ავტორიზაცია")
 
+#ელფოსტით აქტივაციის კოდის ხელახლა გამოგზავნის ფორმა
 class ResendKeyForm(FlaskForm):
     email = EmailField("Email")
     submit = SubmitField("გამოგზავნა")
@@ -16,19 +17,19 @@ class ResendKeyForm(FlaskForm):
     def validate_email(self, field):
         user = User.query.filter_by(email=field.data).first()
         if not user:
-            raise ValidationError("აღნიშნული ემეილით მომხმარებელი არ იძებნება")
+            raise ValidationError("აღნიშნული ელფოსტით მომხმარებელი არ იძებნება")
 
         if user.confirmed:
             raise ValidationError("მომხმარებელი გააქტიურებულია")
 
-class ResetPasswordForm(FlaskForm):
-    new_password = PasswordField("New Password", validators=[
-        DataRequired(),
-        length(min=5, max=15, message="შეიყვანეთ მინიმუმ 5 და მაქსიმუმ 15 სიმბოლო"),
-        equal_to('confirm_new_password', message='Passwords must match')
-    ])
-    confirm_new_password = PasswordField("Confirm New Password", validators=[DataRequired()])
 
+
+
+#პაროლისთის
+class ResetPasswordForm(FlaskForm):
+    new_password = PasswordField("password", validators=[DataRequired()])
+    confirm_new_password = PasswordField("repeat password", validators=[(DataRequired())])
+    submit = SubmitField("პაროლის შეცვლა")
 
 
 class RegisterForm(FlaskForm):
