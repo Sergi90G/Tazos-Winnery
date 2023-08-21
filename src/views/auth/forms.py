@@ -9,6 +9,10 @@ class LoginForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("ავტორიზაცია")
 
+class ForResetPasswordForm(FlaskForm):
+    email = EmailField("Email")
+    submit = SubmitField("გამოგზავნა")
+
 #ელფოსტით აქტივაციის კოდის ხელახლა გამოგზავნის ფორმა
 class ResendKeyForm(FlaskForm):
     email = EmailField("Email")
