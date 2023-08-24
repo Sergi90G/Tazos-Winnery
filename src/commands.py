@@ -31,7 +31,7 @@ def populate_db():
         new_role = Role(name=role)
         new_role.create()
 
-    admin_user = User(username="admin", password="Password123!", role_id=1)
+    admin_user = User(username="admin", password="Password123!", role_id=1, confirmed=True)
     admin_user.create()
 
     click.echo("Products created")

@@ -4,14 +4,16 @@
 {% endblock %}
 {% block body %}
 
-    {% set messages = get_flashed_messages() %}
+
+    {% set messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-danger" role="alert">
-                * {{ message }}
+        {% for category, message in messages %}
+        <div class="{{ category }}" role="alert">
+            {{ message }}
             </div>
         {% endfor %}
     {% endif %}
+
 
     <form method="post">
         {{ form.hidden_tag() }}

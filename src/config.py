@@ -4,7 +4,7 @@ from os import path
 class Config(object):
     BASE_DIRECTORY = path.abspath(path.dirname(__file__))
     UPLOAD_PATH = path.join(BASE_DIRECTORY, "uploads")
-
+    FLASK_ADMIN_SWATCH = "slate"
 
     BABEL_TRANSLATION_DIRECTORIES = "../translations"
 

@@ -22,7 +22,7 @@ def register():
         activation_key = create_key((form.email.data))
         html = render_template("_activation_message.html", activation_key=activation_key)
         send_email("რეგისტრაცია საიტზე", html, [form.email.data])
-        flash("აქტივაციის ლინკი გამოგზავნილია")
+        flash("აქტივაციის ლინკი გამოგზავნილია", "success")
         return redirect(url_for("main.index"))
 
     if form.errors:
@@ -39,7 +39,7 @@ def resend_key():
         html = render_template("_resend_key_message.html", activation_key=activation_key)
         send_email("მეილის აქტივაცია", html, [form.email.data])
 
-        flash("* აქტივაციის კოდი გამოგზავნილია")
+        flash("* აქტივაციის კოდი გამოგზავნილია", "success")
         return redirect(url_for("main.index"))
 
     if form.errors:
@@ -53,12 +53,12 @@ def resend_key():
 def confirm_email(activation_key):
     email = confirm_key(activation_key)
     if not email:
-        flash("* აქტივაციის კოდი არასწორია ან გაუვიდა ვადა")
+        flash("* აქტივაციის კოდი არასწორია ან გაუვიდა ვადა", "error")
         return redirect(url_for("auth.register"))
 
     user = User.query.filter_by(email=email).first()
     if user.confirmed:
-        flash("* მომხმარებელი უკვე გააქტიურებულია")
+        flash("* მომხმარებელი უკვე გააქტიურებულია", "error")
         return redirect(url_for("auth.login"))
 
     user.confirmed = True
@@ -71,18 +71,17 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
 
-
         user = User.query.filter_by(username=form.username.data).first()
         if not user:
-            flash("ეს მომხმარებელი ვერ მოიძებნა, 'damage'")
+            flash("ეს მომხმარებელი ვერ მოიძებნა", "error")
             return redirect(url_for("auth.login"))
 
         if not user.confirmed:
-            flash("მეილი არ დადასტურდა, 'damage'")
+            flash("მეილი არ დადასტურდა", "error")
             return redirect(url_for("auth.login"))
 
         if user.check_password(form.password.data):
-            flash("წარმატებით დალოგინდით!, 'succses'")
+            flash("წარმატებით დალოგინდით!", "success")
             login_user(user)
             next = request.args.get("next")
             if next:
@@ -90,7 +89,7 @@ def login():
             else:
                 return redirect(url_for("main.index"))
         else:
-            flash("პაროლი არასწორია")
+            flash("პაროლი არასწორია", "error")
 
 
 
@@ -103,10 +102,6 @@ def logout():
     return redirect(url_for("main.index"))
 
 
-
-
-
-
 @auth_blueprint.route("/for_reset_password", methods=["GET", "POST"])
 def for_reset_password():
     form = ForResetPasswordForm()
@@ -115,7 +110,7 @@ def for_reset_password():
         html = render_template("_reset_password_message.html", reset_key=reset_key)
         send_email("პაროლის აღდგენა", html, [form.email.data])
 
-        flash("* პაროლის აღდგენის კოდი გამოგზავნილია ")
+        flash("* პაროლის აღდგენის კოდი გამოგზავნილია", "success")
         return redirect(url_for("main.index"))
 
     if form.errors:
@@ -130,12 +125,12 @@ def for_reset_password():
 def reset_password(reset_key):
     email = confirm_password_reset_key(reset_key)
     if not email:
-        flash(" აქტივაციის კოდი არასწორია ან გაუვიდა ვადა", "damage")
+        flash(" აქტივაციის კოდი არასწორია ან გაუვიდა ვადა", "error")
         return redirect(url_for("auth.register"))
 
     user = User.query.filter_by(email=email).first()
     if user is None:
-        flash("მომხმარებელი ვერ მოიძებნა")
+        flash("მომხმარებელი ვერ მოიძებნა", "error")
         return redirect(url_for("main.index"))
 
     form = ResetPasswordForm()

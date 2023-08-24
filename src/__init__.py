@@ -46,6 +46,7 @@ def register_extensions(app):
 
     #flask-admin
     admin.init_app(app)
+    #amit buttonebs vamateb flask_adminshi
     admin.add_view(UserView(User, db.session))
     admin.add_view(ProductView(Product, db.session))
     admin.add_view(SecureModelView(Role, db.session))

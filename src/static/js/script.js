@@ -1,9 +1,36 @@
-  const carouselContent = document.querySelector('.carousel-content');
+const carousel = document.querySelector('.carousel');
+  const images = carousel.querySelectorAll('img');
+  const totalImages = images.length;
+
   let currentIndex = 0;
 
-  function slideCarousel() {
-    currentIndex = (currentIndex + 1) % 3;
-    carouselContent.style.transform = `translateX(-${currentIndex * 310}px)`;
+  function showImage(index) {
+    images.forEach((image, i) => {
+      if (i === index) {
+        image.style.display = 'block';
+      } else {
+        image.style.display = 'none';
+      }
+    });
   }
 
-  setInterval(slideCarousel, 3000);
+  function showNextImage() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    showImage(currentIndex);
+  }
+
+  // Initial image display
+  showImage(currentIndex);
+
+  // Auto-slide every 3 seconds
+  let interval = setInterval(showNextImage, 3000);
+
+  // Stop auto-slide when hovering over the carousel
+  carousel.addEventListener('mouseenter', () => {
+    clearInterval(interval);
+  });
+
+  // Resume auto-slide when not hovering over the carousel
+  carousel.addEventListener('mouseleave', () => {
+    interval = setInterval(showNextImage, 3000);
+  });
