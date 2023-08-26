@@ -1,41 +1,109 @@
- body, h1, h2, h3, p, ul, li {
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
-  }
+}
 
-  /* Set background image for the body */
-  body {
-    background-image: url('https://t3.ftcdn.net/jpg/00/90/61/14/240_F_90611493_h9XRddz6NriZmVKSa0ZoiVSxYUrSKb2r.jpg');
+/* Set background image for the body */
+body {
+    background-image: url('https://img.freepik.com/premium-photo/old-wooden-beer-barrel-dark-background_96140-102.jpg?w=826');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
-  }
+    background-size: cover; /* Use 'cover' to ensure the image covers the entire viewport */
+    margin: 0; /* Reset default body margin */
+    padding: 0; /* Reset default body padding */
+}
 
-  /* Flex container for contact sections */
-  .d-inline-block {
+
+}
+
+/* Flex container for contact sections */
+.d-inline-block {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 
-  }
+}
 
-  /* Styling for each contact section */
-  .d-inline-block {
+/* Styling for each contact section */
+.d-inline-block {
     flex: 1;
     text-align: center;
     padding: 20px;
     max-width: 300px; /* Added max-width to limit width */
-  }
+}
 
 
-  /* Styling for buttons */
-  .btn {
+/* Styling for buttons */
+.btn {
     margin-top: 10px;
-  }
-  .diviko {
+}
+
+.diviko {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-  }
+}
 
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 600px;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel img {
+    width: 600px;
+    height: 350px;
+}
+
+.carousel-btn {
+    cursor: pointer;
+}
+
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+body > div.container.mt-3 > div {
+    background-color: #2a2a2a;
+}
+
+body > div.container.mt-3 > span {
+    color: #b2b2b2;
+    font-weight: bold;
+}
+
+body > div.container.mt-3 > div > h1 {
+    color: #b2b2b2;
+}
+
+.welcometxt {
+    color: #b2b2b2;
+}
+
+body > div.container.mt-3 > div > div.diviko {
+    color: #b2b2b2;
+
+}
+
+body > div.container.mt-3 > div > b {
+    color: #b2b2b2;
+
+}
+.h1-center {
+  text-align: center;
+    font-style: italic;
+}
+body > div.container.mt-3 > div {
+    text-align: center;
+    align-content: center;
+    align-items:center;
+}

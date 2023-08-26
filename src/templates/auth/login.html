@@ -8,7 +8,7 @@ login
  {% set messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
         {% for category, message in messages %}
-        <div class="{{ category }}" role="alert">
+        <div class="{% if category == 'success' %}success {% elif category == 'error'  %}error{% endif %} " role="alert">
             {{ message }}
             </div>
         {% endfor %}

@@ -1,8 +1,5 @@
-import os
-from flask import render_template, Blueprint, flash, redirect, url_for, request, app
+from flask import render_template, Blueprint, flash, redirect, url_for
 from flask_login import login_required
-from werkzeug.utils import secure_filename
-from src import db
 from src.views.products.forms import ProductForm
 from src.models import Product
 from src.config import Config
@@ -28,7 +25,7 @@ def add_product():
     form = ProductForm()
 
     if form.validate_on_submit():
-        new_product = Product(name=form.name.data, description=form.description.data, price=form.price.data)
+        new_product = Product(name=form.name.data, description=form.description.data, price=form.price.data, photo=form.photo.data)
         new_product.create()
         return redirect(url_for('products.all_products'))
 
@@ -39,15 +36,16 @@ def add_product():
 @login_required
 def edit_product(id):
     product = Product.query.get(id)
-    form = ProductForm(name=product.name, description=product.description, price=product.price)
+    form = ProductForm(name=product.name, description=product.description, price=product.price,  photo=product.photo )
     if form.validate_on_submit():
         product.name = form.name.data
         product.description = form.description.data
         product.price = form.price.data
+        product.photo = form.photo.data
         product.save()
         return redirect(url_for('products.all_products'))
 
-    return render_template("add_product.html", form=form)
+    return render_template("edit_product.html", form=form)
 
 
 @product_blueprint.route("/delete_product/<int:id>")
@@ -58,19 +56,13 @@ def delete_product(id):
     flash("პროდუქტი წაიშალა")
     return redirect(url_for('products.all_products'))
 
-@product_blueprint.route('/products_images/<int:id>', methods=['GET', 'POST'])
+@product_blueprint.route("/buy_product/<int:id>")
 @login_required
-def products_images(id):
+def buy_product(id):
     product = Product.query.get(id)
-    if request.method == 'POST':
-        uploaded_file = request.files['uploads']
-        if uploaded_file:
-            filename = secure_filename(uploaded_file.filename)
-            uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            product.image_url = f'/static/uploads/{filename}'
-            db.session.commit()
 
-    return redirect(url_for('products.view_product', id=id))
+    flash("გილოცავთ თქვენ შეიძინეთ პროდუქტი")
+    return render_template("buy_product.html", product=product)
 
 
 @product_blueprint.route("/products/<int:id>")

@@ -8,4 +8,4 @@ class ProductForm(FlaskForm):
     description = TextAreaField("პროდუქტის აღწერა")
     price = IntegerField("პროდუქტის ფასი")
     photo = FileUploadField("პროდუქტის ფოტო")
-    submit = SubmitField("პროდუქტის დამატება")
+    submit = SubmitField("დამატება")

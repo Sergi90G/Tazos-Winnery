@@ -118,6 +118,7 @@ def for_reset_password():
             for error in errors:
                 flash(error)
 
+
     return render_template("for_reset_password.html", form=form)
 
 
