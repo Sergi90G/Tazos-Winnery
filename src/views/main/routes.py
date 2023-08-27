@@ -1,8 +1,6 @@
 from flask import render_template, Blueprint, flash, url_for, session, redirect
 from os import path
-from uuid import uuid4
-from flask_login import current_user
-from src.models import User
+
 from src.views.main.forms import  AboutForm
 from src.config import Config
 

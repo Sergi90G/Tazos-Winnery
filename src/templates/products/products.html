@@ -6,27 +6,31 @@
 
 {% block body %}
 
-    <div class="row">
-        {% for product in prlist %}
-            <div class="card" style="width: 18rem;">
-              <img src="{{ product.products_images}}" class="card-img-top" alt="Product image">
-                <div class="card-body">
-                    <h5 class="card-title"> {{ product.name }}</h5>
-                    <p class="card-text"> {{ product.description }}</p>
-                    <a href="{{ url_for('products.view_product', id=product.id) }}" class="btn btn-primary">Details</a>
-
-
-                    {% if  current_user.is_authenticated  and current_user.role.name == "admin" %}
-                            <a href="{{ url_for('products.edit_product', id=product.id) }}" class="btn btn-warning">Edit</a>
-                            <a href="{{ url_for('products.delete_product', id=product.id) }}"  class="btn btn-danger">Delete</a>
-                            <a href="{{ url_for('products.add_product', id=product.id) }}" class="btn btn-success">add</a>
-                   {% elif current_user.is_authenticated and current_user.role.name != "admin" %}
-                            <a href="{{ url_for('products.buy_product', id=product.id) }}" class="btn btn-warning">buy</a>
-
-                {% endif %}
-                </div>
+<div class="card-container">
+    {% for product in prlist %}
+        <div class="card square-card">
+            <div class="card-img-wrapper">
+                <img src="{{ product.photo }}" class="card-img-top" alt="Product image">
             </div>
-        {% endfor %}
-    </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.price }} ლარი</p>
+                <p class="card-text">{{ product.category }}</p>
+                <a href="{{ url_for('products.view_product', id=product.id) }}" class="btn btn-primary">Details</a>
+
+                {% if current_user.is_authenticated and current_user.role.name == "admin" %}
+                    <a href="{{ url_for('products.edit_product', id=product.id) }}" class="btn btn-warning">Edit</a>
+                    <a href="{{ url_for('products.delete_product', id=product.id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ url_for('products.add_product', id=product.id) }}" class="btn btn-success">Add</a>
+                {% elif current_user.is_authenticated and current_user.role.name != "admin" %}
+                    <a href="{{ url_for('products.buy_product', id=product.id) }}" class="btn btn-warning">Buy</a>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
 
 {% endblock %}

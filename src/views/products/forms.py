@@ -7,5 +7,6 @@ class ProductForm(FlaskForm):
     name = StringField("პროდუქტის სახელი")
     description = TextAreaField("პროდუქტის აღწერა")
     price = IntegerField("პროდუქტის ფასი")
+    category = StringField("პროდუქტის კატეგორია")
     photo = FileUploadField("პროდუქტის ფოტო")
     submit = SubmitField("დამატება")

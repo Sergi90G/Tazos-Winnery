@@ -1,16 +1,16 @@
 {% extends "layout/base.html" %}
 {% block body %}
-
-
-     {% set messages = get_flashed_messages() %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-danger" role="alert">
-            * {{ message }}
-            </div>
-
+        <ul class=flashes>
+        {% for  category, message in messages %}
+            <li class="{{ category }}">
+                 {{ message }}
+            </li>
         {% endfor %}
-{% endif %}
+        </ul>
+    {% endif %}
+   {% endwith %}
 
     {% if current_user.is_authenticated %}
    <span> {{ _("გამარჯობა") }}, {{current_user.username }} &#10084;</span>
