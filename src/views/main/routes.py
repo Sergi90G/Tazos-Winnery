@@ -17,10 +17,13 @@ def index():
 @main_blueprint.route("/about", methods=['GET','POST'])
 def about():
     form = AboutForm()
-    if form.validate_on_submit():
-     flash("Form submitted successfully!")
+    text = None
 
-    return render_template("about.html", form=form)
+    if form.validate_on_submit():
+        text = form.texstarea.data
+
+
+    return render_template("about.html", form=form,  text=text)
 
 @main_blueprint.route("/change_language")
 def change_language():

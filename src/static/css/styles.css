@@ -147,4 +147,14 @@ body > div.container.mt-3 > div {
  /* Scale image while preserving aspect ratio */
 }
 
+.discount-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: red;
+        color: white;
+        padding: 4px 8px;
+        font-weight: bold;
+    }
+
 

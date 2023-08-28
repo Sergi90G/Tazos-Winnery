@@ -12,8 +12,12 @@ class ProductView(SecureModelView):
     edit_modal = True
     can_export = True
     column_editable_list = ["name", "description", "price", "photo"]
-    form_overrides = {"category": SelectField, "description": TextAreaField }
-    form_args = {"category": {"validators": [DataRequired()], "choices": ["red wine","white wine"]}}
+    form_overrides = {"category": SelectField, "description": TextAreaField , "yearofbottling": SelectField}
+    form_args = {"category": {"validators": [DataRequired()], "choices": ["თეთრი ნახევრად ტკბილი","თეთრი ცქრიალა",
+                                                                          "თეთრი მშრალი","როზე ნახევრად მშრალი",
+                 "წითელი მშრალი","წითელი ნახევრად ტკბილი", "წითელი ტკბილი"]},
+                 "yearofbottling": {"validators": [DataRequired()],
+                                    "choices": ["2017","2018","2019","2020","2021","2022","2023"]}}
 
     form_extra_fields = {
         "photo": FileUploadField("Photo", base_path="path/to/uploaded/photos")

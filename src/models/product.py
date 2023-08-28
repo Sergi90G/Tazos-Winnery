@@ -7,6 +7,7 @@ class Product(db.Model, BaseModel):
     name = db.Column(db.String)
     category = db.Column(db.String)
     description = db.Column(db.String)
+    yearofbottling = db.Column(db.Integer)
     price = db.Column(db.Integer)
     photo = db.Column(db.String)
 

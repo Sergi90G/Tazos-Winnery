@@ -1,11 +1,5 @@
 {% extends "layout/base.html" %}
 {% block body%}
-    <style> body {
-  background-image: url('https://t3.ftcdn.net/jpg/01/04/20/18/240_F_104201889_akJ4gafyCdIkgvAy7ZGxbtxXoPkcBryb.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}</style>
 
 
 
@@ -32,7 +26,18 @@
 </div>
 <form>
 <div class="container mt-4 bg-light rounded-3 shadow">
+<h1>Text Area Form</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.texstarea.label }}<br>
+        {{ form.texstarea(size=20) }}<br>
+        <input type="submit" value="Submit">
+    </form>
 
+    {% if text %}
+    <h2>Submitted Text:</h2>
+    <p>{{ text }}</p>
+    {% endif %}
 <ol>
     <li>უკუკავშირი. რა მოგეწონათ ან არ მოგეწონათ ჩვენთან?</li>
     <textarea placeholder="პასუხი აქ ჩაწერეთ" cols="40" rows="5"></textarea>
@@ -42,12 +47,6 @@
 <hr>
 </div>
 </form>
-<div class="card container mt-4 bg-light rounded-3 shadow" style="width: 18rem;">
-  <img src="https://img.freepik.com/premium-vector/fitness-concept_1133-512.jpg?w=740" class="card-img-top" alt="პროდუქტი">
-  <div class="card-body">
-    <h5 class="card-title">ციცქა</h5>
-    <p class="card-text">7GEl</p>
-    <a href="#" class="btn btn-primary">შეძენა</a>
-  </div>
-</div>
+<h1>ონლაინ პროდუქტის შესაძენად საჭიროა გაიაროთ რეგისტრაცია</h1>
+     <a href="{{ url_for('auth.register') }}">დააჭირე აქ</a>
 {% endblock %}

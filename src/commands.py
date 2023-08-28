@@ -20,8 +20,8 @@ def init_db():
 @with_appcontext
 def populate_db():
     click.echo("Creating products")
-    for index in range(10):
-        product = Product(name=f"Product {index}", description=f"აღწერა product {index}-ისთვის", price=500 + index)
+    for index in range(5):
+        product = Product(name=f"ღვინის დასახელება {index}", description=f"ღვინის აღწერა {index}-ისთვის", price=10 + index)
         product.create(commit=False)
     Product.save()
 

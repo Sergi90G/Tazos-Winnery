@@ -12,10 +12,12 @@
             <div class="card-img-wrapper">
                 <img src="{{ product.photo }}" class="card-img-top" alt="Product image">
             </div>
+          <div class="discount-badge">-10%</div>
             <div class="card-body">
                 <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text">{{ product.price }} ლარი</p>
-                <p class="card-text">{{ product.category }}</p>
+                <p class="card-text" style="font-weight: bold;">{{ product.price }} ლარი</p>
+                <p class="card-text" style="font-style: italic;">{{ product.category }}</p>
+                <p class="card-text" style="color: red;">{{ product.yearofbottling }}</p>
                 <a href="{{ url_for('products.view_product', id=product.id) }}" class="btn btn-primary">Details</a>
 
                 {% if current_user.is_authenticated and current_user.role.name == "admin" %}
