@@ -1,6 +1,6 @@
 {% extends "layout/base.html" %}
 {% block title %}
-    register
+    Register
 {% endblock %}
 {% block body %}
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -42,7 +42,20 @@
 
         <div class="bg-white p-3 rounded-2 mb-3 shadow">
             {{ form.submit(class="btn btn-success" ) }}
-            <a href="{{ url_for('auth.login') }}">რეგისტრაცია გავლილი მაქვს!</a>
+            <a href="{{ url_for('auth.login') }}">რეგისტრაცია უკვე გაიარეთ?</a>
+        </div>
+         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <div class="main-block">
+            <div class="block-item left">
+                <h4>Sign up with:</h4>
+            </div>
+            <div class="block-item right">
+               <a href="https://www.facebook.com/" class="btn facebook" data-provider="facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+               <a href="https://twitter.com/i/flow/signup" class="btn twitter" data-provider="twitter"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+               <a href="https://www.google.com/webhp?hl=ka&sa=X&ved=0ahUKEwiXhqm97Y2BAxWsSvEDHQiSA54QPAgI" class="btn google" data-provider="google"><i class="fab fa-google"></i><span>Google</span></a>
+            </div>
         </div>
     </form>
 {% endblock %}

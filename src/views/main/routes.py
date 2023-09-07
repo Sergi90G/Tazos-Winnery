@@ -13,6 +13,10 @@ def index():
 
     return render_template("index.html", user_type="admin")
 
+@main_blueprint.route("/profile", methods=["GET", "POST"])
+def profile():
+
+    return render_template("profile.html")
 
 @main_blueprint.route("/about", methods=['GET','POST'])
 def about():

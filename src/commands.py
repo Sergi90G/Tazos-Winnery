@@ -22,7 +22,7 @@ def populate_db():
     click.echo("Creating products")
     for index in range(5):
         product = Product(name=f"ღვინის დასახელება {index}", description=f"ღვინის აღწერა {index}-ისთვის", price=10 + index)
-        product.create(commit=False)
+        product.create(commit=False) #ბაზაში შესანახად გავხადო true
     Product.save()
 
 

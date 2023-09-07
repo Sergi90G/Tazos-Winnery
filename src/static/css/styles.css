@@ -158,3 +158,43 @@ body > div.container.mt-3 > div {
     }
 
 
+
+
+
+.main-block {
+      display: flex;
+      width: 90%;
+      padding: 10px 0;
+      border-radius: 5px;
+      box-shadow: 1px 1px 8px 0px #666;
+      background: #fff;
+      }
+
+
+.btn {
+      display: flex;
+      align-items: center;
+      box-shadow: 2px 2px 2px #666;
+      background: #e8e8e8;
+      color: #fff;
+      cursor: pointer;
+      }
+.btn:hover {
+      transform: scale(1.03);
+      }
+.btn span {
+      font-size: 16px;
+      }
+.facebook {
+      background: #3a589e;
+      }
+.twitter {
+      background: #429cd6;
+      }
+.google{
+      background: #d34836;
+      }
+
+.label {
+    color: limegreen;
+  }

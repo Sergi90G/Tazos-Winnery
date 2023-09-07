@@ -5,6 +5,7 @@
       <img src="{{ url_for('static', filename='images/favicon.ico') }}" alt="Tazo's Winery Logo">
      </a>
 <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -14,6 +15,11 @@
                 {{ create_navlink('main.index', 'Home') }}
                 {{ create_navlink('main.about', 'About') }}
                 {{ create_navlink('products.all_products', 'Products') }}
+            {% if current_user.is_authenticated %}
+                {{ create_navlink('main.profile', 'Profile', 'fas fa-user-circle') }}
+            {% endif %}
+
+
 
                 {% if current_user.is_authenticated and current_user.role.name == "admin" %}
                     <a href="{{ url_for("admin.index") }}" class="nav-link">Admin Panel</a>
@@ -27,7 +33,9 @@
         {{ session['locale'] }}
     </a>
         {% if current_user.is_authenticated %}
-          <a href="{{ url_for('auth.logout') }}" class="btn btn-outline-success">{{ _("Logout") }}</a>
+          <a href="{{ url_for('auth.logout') }}" class="btn btn-outline-success">
+             {{ _("Logout") }}</a>
+
         {% else %}
         <a href="{{ url_for('auth.login') }}" class="btn btn-outline-success mx-2">{{ _("Login") }}</a>
          <a href="{{ url_for('auth.register') }}" class="btn btn-outline-success">{{ _("Register") }}</a>

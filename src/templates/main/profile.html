@@ -1,0 +1,32 @@
+{% extends "layout/base.html" %}
+{% block title %}
+ User Profile
+{% endblock %}
+
+{% block body %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for  category, message in messages %}
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+   {% endwith %}
+
+ {% if current_user.is_authenticated %}
+   <span> {{ "მოგესალმები" }}, {{current_user.username }}
+       {{ "შენს მთავარ გვერდზე, აქ შეგიძლია ნახო შენი პირადი მონაცემები" }}</span>
+    {% endif %}
+    <hr>
+  <span  class="label"> {{ "სახელი:" }}   {{current_user.username }} </span>
+    <hr>
+  <span class="label"> {{ "ელ-ფოსტა:" }}   {{current_user.email }}</span>
+    <hr>
+  <span class="label"> {{ "სქესი:" }}   {{current_user.gender }}</span>
+    <hr>
+  <span class="label"> {{ "დაბადების თარიღი:" }}   {{current_user.birthday }}</span>
+{% endblock %}
