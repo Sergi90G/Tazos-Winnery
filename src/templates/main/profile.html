@@ -18,11 +18,11 @@
    {% endwith %}
 
  {% if current_user.is_authenticated %}
-   <span> {{ "მოგესალმები" }}, {{current_user.username }}
+   <span> {{ "მოგესალმები" }} {{current_user.username }}
        {{ "შენს მთავარ გვერდზე, აქ შეგიძლია ნახო შენი პირადი მონაცემები" }}</span>
     {% endif %}
     <hr>
-  <span  class="label"> {{ "სახელი:" }}   {{current_user.username }} </span>
+  <span  class="label" > {{ "სახელი:" }}   {{current_user.username }}  <i class="material-icons">&#xe8e8;</i> </span>
     <hr>
   <span class="label"> {{ "ელ-ფოსტა:" }}   {{current_user.email }}</span>
     <hr>

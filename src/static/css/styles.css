@@ -198,3 +198,6 @@ body > div.container.mt-3 > div {
 .label {
     color: limegreen;
   }
+.material-icons {
+    color: lime;
+}
