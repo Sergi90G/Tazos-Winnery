@@ -12,4 +12,4 @@ class Product(db.Model, BaseModel):
     photo = db.Column(db.String)
 
 def __repr__(self):
-            return f"{self.name}---{self.price}"
+    return f"{self.name}---{self.price}"

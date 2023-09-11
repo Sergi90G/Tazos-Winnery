@@ -15,7 +15,7 @@ class User(db.Model, BaseModel, UserMixin):
     birthday = db.Column(db.Date)
     confirmed = db.Column(db.Boolean, default=0)
 
-    role_id = db.Column(db.ForeignKey("roles.id"))
+    role_id = db.Column(db.Integer,db.ForeignKey("roles.id"))
     role = db.relationship("Role", uselist=False)
 
 

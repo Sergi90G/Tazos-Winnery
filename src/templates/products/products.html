@@ -1,7 +1,7 @@
 {% extends "layout/base.html" %}
 
 {% block title %}
- wine products
+ Wine Products
 {% endblock %}
 
 {% block body %}
@@ -26,6 +26,7 @@
                     <a href="{{ url_for('products.add_product', id=product.id) }}" class="btn btn-success">Add</a>
                 {% elif current_user.is_authenticated and current_user.role.name != "admin" %}
                     <a href="{{ url_for('products.buy_product', id=product.id) }}" class="btn btn-warning">Buy</a>
+                    <a href="{{ url_for('products.cart', id=product.id) }}" class="fa fa-shopping-cart">add to cart</a>
                 {% endif %}
             </div>
         </div>

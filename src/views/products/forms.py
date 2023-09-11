@@ -2,6 +2,8 @@ from flask_wtf import FlaskForm
 from wtforms.fields import StringField, IntegerField, TextAreaField, SubmitField, FileField,  SelectField
 from flask_admin.form.upload import FileUploadField
 
+
+
 class ProductForm(FlaskForm):
 
     name = StringField("პროდუქტის სახელი")

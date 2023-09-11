@@ -6,7 +6,7 @@ from src.models import User, Product, Role
 from src.views import main_blueprint, auth_blueprint, product_blueprint
 from src.commands import init_db, populate_db, send_email_command
 from src.admin import admin, SecureModelView, UserView, ProductView
-from flask_admin.contrib.sqla import ModelView
+from src.api import api
 
 
 
@@ -55,6 +55,9 @@ def register_extensions(app):
 
     # flask_mail
     mail.init_app(app)
+
+    #flask-restful
+    api.init_app(app)
 
 
 @login_manager.user_loader

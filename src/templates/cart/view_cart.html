@@ -1,0 +1,19 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+View Cart
+{% endblock %}
+
+{% block body %}
+<body>
+    <h1>Your Shopping Cart</h1>
+    <!-- Loop through cart items and display product details -->
+    <ul>
+        {% for item in cart_items %}
+        <li>{{ item.product.name }} - ${{ item.product.price }} - Quantity: {{ item.quantity }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total: ${{ total_price }}</p>
+    <a href="{{ url_for('cart.checkout') }}">Proceed to Checkout</a>
+</body>
+{% endblock %}

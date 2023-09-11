@@ -13,6 +13,7 @@ class Config(object):
     SERIALIZER_SALT_PASSWORD = "fsfsggfggrewwa"
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + path.join(BASE_DIRECTORY, "database.db")
 
+
     # flask-mail
     MAIL_SERVER = "sandbox.smtp.mailtrap.io"
     MAIL_PORT = 2525
