@@ -3,7 +3,7 @@
 
 
 
-    <div class="container mt-4"> <h3>ჩვენს შესახებ</h3>
+    <div class="container mt-4 bg-light rounded-3 shadow"> <h3>ჩვენს შესახებ</h3>
 <i><b><p>საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,
     ქართული ვაზის ჯიშებისგან ტრადიციული მეთოდებით დაყენებული ღვინო წარმოადგენს ჩვენს პროდუქტს.
     ჩვენთვის პირველ რიგში მნიშვნელოვანია ხარისხი და არა რაოდენობა. საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს
@@ -24,6 +24,16 @@
      </p></b></i>
 <hr>
 </div>
+
+<div class="container mt-4 bg-blueviolet rounded-3 ">
+        <h1 class="info-text">ონლაინ პროდუქტის შესაძენად საჭიროა გაიაროთ რეგისტრაცია</h1>
+     <a href="{{ url_for('auth.register') }}" class="btn btn-success">დააჭირე აქ</a>
+    <hr>
+</div>
+
+
+
+
 <form>
 <div class="container mt-4 bg-light rounded-3 shadow">
 <h1>Text Area Form</h1>
@@ -47,6 +57,7 @@
 <hr>
 </div>
 </form>
-<h1>ონლაინ პროდუქტის შესაძენად საჭიროა გაიაროთ რეგისტრაცია</h1>
-     <a href="{{ url_for('auth.register') }}">დააჭირე აქ</a>
+
+
+
 {% endblock %}

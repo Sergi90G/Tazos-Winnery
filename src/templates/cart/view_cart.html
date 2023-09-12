@@ -1,19 +1,46 @@
 {% extends "layout/base.html" %}
 
 {% block title %}
-View Cart
+ Cart | Tazoswinery.ge
 {% endblock %}
 
 {% block body %}
-<body>
-    <h1>Your Shopping Cart</h1>
-    <!-- Loop through cart items and display product details -->
-    <ul>
-        {% for item in cart_items %}
-        <li>{{ item.product.name }} - ${{ item.product.price }} - Quantity: {{ item.quantity }}</li>
-        {% endfor %}
-    </ul>
+
+<div class="container mt-4 bg-light rounded-3 shadow">
+    <form method="POST" action="{{ url_for('cart.view_cart') }}">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>${{ item.product.price }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('cart.view_cart') }}">
+                            {{ item_form.hidden_tag() }}
+                            {{ item_form.quantity.label }}
+                            {{ item_form.quantity(size=3) }}
+                            {{ item_form.submit() }}
+                        </form>
+                    </td>
+                    <td>${{ item.product.price * item.quantity }}</td>
+                    <td>
+                        <a href="{{ url_for('cart.remove_from_cart', cart_item_id=item.id) }}">Remove</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
     <p>Total: ${{ total_price }}</p>
     <a href="{{ url_for('cart.checkout') }}">Proceed to Checkout</a>
-</body>
+</div>
 {% endblock %}

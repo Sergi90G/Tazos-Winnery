@@ -19,7 +19,7 @@
                 {{ create_navlink('products.all_products', 'Products') }}
             {% if current_user.is_authenticated %}
                 {{ create_navlink('main.profile', 'Profile', 'fas fa-user-circle') }}
-                {{ create_navlink('main.index', 'Cart', 'fas fa-shopping-cart') }}
+                {{ create_navlink('cart.view_cart', 'Cart', 'fas fa-shopping-cart') }}
             {% endif %}
 
 

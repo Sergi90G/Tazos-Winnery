@@ -202,4 +202,8 @@ body > div.container.mt-3 > div {
     color: lime;
 }
 
-
+.info-text {
+    font-size: 20px; /* Adjust the font size as needed */
+    font-style: italic; /* Make the text italic */
+    color: black/* Set the text color to a muted color */
+  }

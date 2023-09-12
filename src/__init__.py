@@ -3,14 +3,14 @@ from flask_admin.menu import MenuLink
 from src.config import Config
 from src.extensions import db, migrate, login_manager, babel, mail
 from src.models import User, Product, Role
-from src.views import main_blueprint, auth_blueprint, product_blueprint
+from src.views import main_blueprint, auth_blueprint, product_blueprint,cart_blueprint
 from src.commands import init_db, populate_db, send_email_command
 from src.admin import admin, SecureModelView, UserView, ProductView
 from src.api import api
 
 
 
-BLUEPRINTS = [main_blueprint, auth_blueprint, product_blueprint]
+BLUEPRINTS = [main_blueprint, auth_blueprint, product_blueprint, cart_blueprint]
 COMMANDS = [init_db, populate_db, send_email_command]
 
 def create_app():
