@@ -21,14 +21,14 @@ def index():
 @login_required
 def profile():
     if request.method == "POST":
-        # Handle profile image upload
         if "profile_image" in request.files:
             file = request.files["profile_image"]
             if file.filename != "":
                 filename = secure_filename(file.filename)
                 file.save(path.join(Config.UPLOAD_FOLDER, filename))
-                current_user.profile_image_url = url_for("static", filename=f"images/{filename}")
-                #დათაბაზაში დამატების ფუნქციონალი გავაკეთო
+                current_user.profile_path = url_for("static", filename=f"images/{filename}")
+                session["profile_path"] = current_user.profile_path
+
                 flash("Profile image updated successfully.", 'success')
 
     return render_template("profile.html")

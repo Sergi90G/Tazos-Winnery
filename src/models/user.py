@@ -14,7 +14,7 @@ class User(db.Model, BaseModel, UserMixin):
     gender = db.Column(db.String)
     birthday = db.Column(db.Date)
     confirmed = db.Column(db.Boolean, default=0)
-    profile_image_url = db.Column(db.String(255), nullable=True)
+    profile_path = db.Column(db.String(255), nullable=True)
 
     role_id = db.Column(db.Integer,db.ForeignKey("roles.id"))
     role = db.relationship("Role", uselist=False)
