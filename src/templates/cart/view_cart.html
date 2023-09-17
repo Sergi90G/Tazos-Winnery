@@ -6,41 +6,31 @@
 
 {% block body %}
 
-<div class="container mt-4 bg-light rounded-3 shadow">
-    <form method="POST" action="{{ url_for('cart.view_cart') }}">
-        <table>
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in cart_items %}
-                <tr>
-                    <td>{{ item.product.name }}</td>
-                    <td>${{ item.product.price }}</td>
-                    <td>
-                        <form method="POST" action="{{ url_for('cart.view_cart') }}">
-                            {{ item_form.hidden_tag() }}
-                            {{ item_form.quantity.label }}
-                            {{ item_form.quantity(size=3) }}
-                            {{ item_form.submit() }}
-                        </form>
-                    </td>
-                    <td>${{ item.product.price * item.quantity }}</td>
-                    <td>
-                        <a href="{{ url_for('cart.remove_from_cart', cart_item_id=item.id) }}">Remove</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </form>
-    <p>Total: ${{ total_price }}</p>
-    <a href="{{ url_for('cart.checkout') }}">Proceed to Checkout</a>
+  <div class="container mt-4 bg-light rounded-3 shadow">
+         <h1>Your Shopping Cart</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <!-- ... Other table headers ... -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in prlist %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>${{ product.price }}</td>
+                <!-- ... Other table data ... -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+        <a href="/products">Back to Products</a>
+    </div>
 </div>
 {% endblock %}

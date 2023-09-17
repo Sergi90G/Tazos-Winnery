@@ -16,35 +16,46 @@
         </ul>
     {% endif %}
    {% endwith %}
-<div class="container mt-4 bg-blueviolet rounded-3 shadow">
- {% if current_user.is_authenticated %}
-   <span> {{ "მოგესალმები" }} {{current_user.username }}
-       {{ "შენს მთავარ გვერდზე, აქ შეგიძლია ნახო შენი პირადი მონაცემები" }}</span>
-    {% endif %}
-    <hr>
-  <span  class="label" > {{ "სახელი:" }}   {{current_user.username }}  <i class="material-icons">&#xe8e8;</i> </span>
-    <hr>
-  <span class="label"> {{ "ელ-ფოსტა:" }}   {{current_user.email }}</span>
-    <hr>
-  <span class="label"> {{ "სქესი:" }}   {{current_user.gender }}</span>
-    <hr>
-  <span class="label"> {{ "დაბადების თარიღი:" }}   {{current_user.birthday }}</span>
+
+<div class="container mt-4 bg-light rounded-3 shadow custom2-background">
+    <div class="row">
+        <div class="col-md-4">
+            {% if current_user.is_authenticated %}
+
+                <div class="text-center">
+                    <img src="{{ current_user.profile_image_url }}" alt="Profile Image" class="img-thumbnail"
+                         style="width: 200px; height: 200px;">
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            {% if current_user.is_authenticated %}
+                <span> <strong>{{ "მოგესალმები" }} {{current_user.username }}
+                {{ "შენს მთავარ გვერდზე, აქ შეგიძლია ნახო შენი პირადი მონაცემები:" }}</strong></span>
+                <hr>
+                <span  class="label"><strong>{{ "სახელი:" }}</strong>   {{current_user.username }}
+                    <i class="material-icons">&#xe8e8;</i> </span>
+                <hr>
+                <span class="label"><strong>{{ "ელ-ფოსტა:" }}</strong>    {{current_user.email }}</span>
+                <hr>
+                <span class="label"><strong>{{ "სქესი:" }}</strong>    {{current_user.gender }}</span>
+                <hr>
+                <span class="label"><strong>{{ "დაბადების თარიღი:" }}</strong>    {{current_user.birthday }}</span>
+            {% endif %}
+        </div>
+    </div>
 
     <form method="POST" enctype="multipart/form-data">
-            <div class="file-upload account_info_upload_image">
-                <div class="image-upload-wrap">
-                    <input class="file-upload-input" type="file" name="profile_image" id="profile_image" onchange="readURL(this);" accept="image/*">
-                    <img src="{{ current_user.profile_image_url }}" id="uploaded-image" alt="Profile Image">
-                </div>
-                <div class="file-upload-content">
-                    <div class="file-upload-image" id="uploaded-image"></div>
-                    <div class="product_item_delete" onclick="removeUpload()">
-                        <img src="/Themes/Zoommer/assets/images/Close.svg">
-                    </div>
-                </div>
-                <button class="file-upload-btn" type="submit">სურათის ატვირთვა</button>
+        <div class="file-upload account_info_upload_image mt-4">
+            <div class="image-upload-wrap">
+                <input class="file-upload-input" type="file" name="profile_image" id="profile_image" onchange="readURL(this);" accept="image/*">
+
             </div>
+
+            <button class="btn btn-outline-secondary" type="submit">სურათის ატვირთვა</button>
+
     </form>
 </div>
+
 
 {% endblock %}

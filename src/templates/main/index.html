@@ -1,4 +1,7 @@
 {% extends "layout/base.html" %}
+{% block title %}
+ Home Page | Tazoswinery.ge
+{% endblock %}
 {% block body %}
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
@@ -15,28 +18,41 @@
     {% if current_user.is_authenticated %}
    <span> {{ _("გამარჯობა") }}, {{current_user.username }} &#10084;</span>
     {% endif %}
-    <div   class="container mt-4"> <h1 class="h1-center">Tazo's Winnery</h1>
-<hr>
+
+    <div   class="container mt-4 custom-background"> <h1 class="h1-center">
+    <span class="company-icon"><i class="fas fa-grapes"></i></span>
+    <span class="company-name">Tazo's Winery</span>
+</h1>
+<hr class="black-bar">
 <i><b><p class="welcometxt">{{ _("საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,
     ქართული ვაზის ჯიშებისგან ტრადიციული მეთოდებით დაყენებული ღვინო წარმოადგენს ჩვენს პროდუქტს.
     ჩვენი მთავარ მიზანია ხარისხი და არა რაოდენობა.
     საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს განთავსებას, გასტრონომიას.") }}  </p></b></i>
-<hr>
+<hr class="black-bar">
         <a href="{{ url_for('main.about') }}" class="btn btn-dark">ვრცლად</a>
-<hr>
+<hr class="black-bar">
         <div class="carousel" >
-  <img src="https://www.wine.com/content/media/jc70ljquxrra/7o3AizfgbqhrQj3Wyj4FbG/7857b48637b3bf264bd7a2ebb177a0ad/02_Recently_Featured.jpg?w=1280&q=50" alt="Image 1">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHlfOsdiSuJeLih9pjt3YjlYKsLc2v1Y3Z2wGZKJiOUKZ2_uXspx0rDai5yZqHkzNILLE&usqp=CAU" alt="Image 2">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL2XT5G3tCHeWy6gjJEplFr-GDBK_iX106pXWzcBCj_q1JYBBdDG25eRmuwETgppS1_oQ&usqp=CAU" alt="Image 3">
-</div>
-<hr>
+            <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?ixlib=rb-4.
+            0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ4fHx3aW5lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                 alt="Image 1">
+            <img src="https://images.unsplash.com/photo-1519092796169-bb9cc75a4b68?ixlib=rb-4.
+            0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fHdpbmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                 alt="Image 2">
+            <img src="https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?ixlib=rb-4.
+            0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdpbmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                 alt="Image 3">
+            <img src="https://images.unsplash.com/photo-1464638681273-0962e9b53566?ixlib=rb-4.
+            0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fHdpbmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                 alt="Image 4">
+       </div>
+        <hr class="black-bar">
         <b>{{ _("Contact Us") }}</b>
-    <hr>
+        <hr class="black-bar">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16732.72586762519!2d42.26604198277017!3d42.
 151228752779964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405cffa9dadd8d03%3A0x1c8c218b5785675d!2sTazo&#39;
 s%20Marani!5e0!3m2!1ska!2sge!4v1690825957562!5m2!1ska!2sge" width="900" height="350" style="border:0;"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <hr>
+    <hr class="black-bar">
         <div class="diviko">
      <div class="d-inline-block">
     <b>{{ _("Contact") }}</b><br>

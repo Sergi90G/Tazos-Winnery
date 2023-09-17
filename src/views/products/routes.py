@@ -69,3 +69,6 @@ def buy_product(id):
 def view_product(id):
     chosen_product = Product.query.get(id)
     return render_template("view_product.html", product=chosen_product)
+
+
+
