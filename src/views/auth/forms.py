@@ -38,12 +38,12 @@ class ResetPasswordForm(FlaskForm):
 
 class RegisterForm(FlaskForm):
 
-    username = StringField("username", validators=[(DataRequired())])
-    password = PasswordField("password",validators=[DataRequired(), length(min=5, max=15, message="შეიყვანეთ მინიმუმ 5 და მაქსიმუმ 15 სიმბოლო")])
+    username = StringField("სახელი", validators=[(DataRequired())])
+    password = PasswordField("პაროლი *",validators=[DataRequired(), length(min=5, max=15, message="შეიყვანეთ მინიმუმ 5 და მაქსიმუმ 15 სიმბოლო")])
     gender = RadioField("აირჩიეთ სქესი", choices=["მამრობითი","მდედრობითი"], validators=[(DataRequired())])
     birthday = DateField("დაბადების თარიღი",validators=[(DataRequired())])
-    email = EmailField("Email")
-    repeat_password = PasswordField("repeat password",
+    email = EmailField("ელ-ფოსტა")
+    repeat_password = PasswordField("გაიმეორეთ პაროლი *",
                                     validators=[DataRequired(), equal_to("password", message="პაროელები არ ემთხვევა")])
 
     submit = SubmitField("რეგისტრაცია")
@@ -51,7 +51,7 @@ class RegisterForm(FlaskForm):
     def validate_username(self, field):
         existing_user = User.query.filter_by(username=field.data).first()
         if existing_user:
-            raise ValidationError("ეს სახელი გამოყენებულია")
+            raise ValidationError("ეს სახელი გამოყენებულია", "error")
 
     def validate_password(self, field):
         for character in field.data:
@@ -73,10 +73,10 @@ class RegisterForm(FlaskForm):
                     contains_symbols = True
 
             if not contains_uppercase:
-                raise ValidationError("პაროლი უნდა შეიცავდეს დიდ ასოებს")
+                raise ValidationError("პაროლი უნდა შეიცავდეს დიდ ასოებს", "error")
             elif not contains_lowercase:
-                raise ValidationError("პაროლი უნდა შეიცავდეს პატარა ასოებს")
+                raise ValidationError("პაროლი უნდა შეიცავდეს პატარა ასოებს", "error")
             elif not contains_digits:
-                raise ValidationError("პაროლი უნდა შეიცავდეს ციფრებს")
+                raise ValidationError("პაროლი უნდა შეიცავდეს ციფრებს", "error")
             elif not contains_symbols:
-                raise ValidationError("პაროლი უნდა შეიცავდეს სიმბოლოებს")
+                raise ValidationError("პაროლი უნდა შეიცავდეს სიმბოლოებს", "error")

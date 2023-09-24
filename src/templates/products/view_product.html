@@ -5,13 +5,29 @@
 {% endblock %}
 
 {% block body %}
+ {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for  category, message in messages %}
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+   {% endwith %}
 
+  <div class="container mt-4 bg-light rounded-3 shadow custom2-background">
+     <h1>პროდუქტის აღწერა</h1>
     <div class="row">
         <table class="table">
             <thead>
             <tr>
                 <th scope="col">სახელი</th>
                 <th scope="col">აღწერა</th>
+                <th scope="col">ფასი</th>
+                <th scope="col">ჩამოსხმის წელი</th>
+                 <th scope="col">კატეგორია</th>
             </tr>
             </thead>
 
@@ -19,9 +35,12 @@
             <tr>
                 <td> {{ product.name }}</td>
                 <td> {{ product.description }}</td>
+                 <td> {{ product.price }}</td>
+                 <td> {{ product.yearofbottling }}</td>
+                 <td> {{ product.category }}</td>
             </tr>
             </tbody>
         </table>
     </div>
-
+  </div>
 {% endblock %}

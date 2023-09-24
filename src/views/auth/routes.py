@@ -99,6 +99,7 @@ def login():
 @auth_blueprint.route("/logout")
 def logout():
     logout_user()
+    flash('თქვენ გამოხვედით საიტიდან', 'success')
     return redirect(url_for("main.index"))
 
 

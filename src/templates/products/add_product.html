@@ -1,7 +1,7 @@
 {% extends "layout/base.html" %}
 
 {% block title %}
-  add products | Tazoswinery.ge
+  Add products | Tazoswinery.ge
 {% endblock %}
 
 {% block body %}
@@ -19,8 +19,8 @@
    {% endwith %}
 
 
-
-    <h1> Add New Product</h1>
+ <div class="container mt-4 custom2-background">
+    <h1>პროდუქტის დამატება</h1>
     <form method="post">
         {{ form.hidden_tag() }}
         <div class="bg-white p-3 rounded-2 mb-3 shadow">
@@ -41,10 +41,15 @@
                 {{ form.category(class="form-control") }}
             </div>
             <div class="mb-3">
+                {{ form.yearofbottling.label(class="form-label") }}
+                {{ form.yearofbottling(class="form-control") }}
+            </div>
+            <div class="mb-3">
                 {{ form.photo.label(class="form-label") }}
                 {{ form.photo(class="form-control") }}
             </div>
             {{ form.submit(class="btn btn-primary") }}
         </div>
     </form>
+ </div>
 {% endblock %}

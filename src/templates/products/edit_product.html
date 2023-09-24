@@ -20,8 +20,8 @@
    {% endwith %}
 
 
-
-    <h1> edit product</h1>
+ <div class="container mt-4 custom2-background">
+    <h1>პროდუქტის რედაქტირება</h1>
     <form method="post">
         {{ form.hidden_tag() }}
         <div class="bg-white p-3 rounded-2 mb-3 shadow">
@@ -41,6 +41,10 @@
                 {{ form.category.label(class="form-label") }}
                 {{ form.category(class="form-control") }}
             </div>
+             <div class="mb-3">
+                {{ form.yearofbottling.label(class="form-label") }}
+                {{ form.yearofbottling(class="form-control") }}
+            </div>
             <div class="mb-3">
                 {{ form.photo.label(class="form-label") }}
                 {{ form.photo(class="form-control") }}
@@ -48,4 +52,5 @@
             {{ form.submit(class="btn btn-primary") }}
         </div>
     </form>
+ </div>
 {% endblock %}

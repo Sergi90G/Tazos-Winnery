@@ -21,17 +21,28 @@ def index():
 @login_required
 def profile():
     if request.method == "POST":
+
         if "profile_image" in request.files:
             file = request.files["profile_image"]
             if file.filename != "":
                 filename = secure_filename(file.filename)
                 file.save(path.join(Config.UPLOAD_FOLDER, filename))
-                current_user.profile_path = url_for("static", filename=f"images/{filename}")
-                session["profile_path"] = current_user.profile_path
+                current_user.profile_photo = url_for("static", filename=f"images/{filename}")
+
+
+                db.session.commit()
 
                 flash("Profile image updated successfully.", 'success')
 
-    return render_template("profile.html")
+    return render_template("profile.html", user=current_user)
+
+@main_blueprint.route("/delete_profile_photo/<int:id>")
+@login_required
+def delete_profile_photo(id):
+    delete_photo = profile_photo.query.get(id)
+    profile_photo.delete()
+    flash("ფოტო წაიშალა", "success")
+    return redirect(url_for('profile.html'))
 
 @main_blueprint.route("/about", methods=['GET','POST'])
 def about():

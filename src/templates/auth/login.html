@@ -20,7 +20,7 @@ login | Tazoswinery.ge
 
 <form method="post">
    {{ form.hidden_tag() }}
- <div class="bg-white p-3 rounded-2 mb-3 shadow">
+  <div class="custom2-background p-4 rounded-5 mb-4 shadow">
      <div class="mb-3">
          {{ form.username.label(class="form-label") }}
          {{ form.username(class="form-control") }}
@@ -30,7 +30,7 @@ login | Tazoswinery.ge
          {{ form.password(class="form-control") }}
      </div>
  </div>
-<div class="bg-white p-3 rounded-2 mb-3 shadow">
+ <div class="custom2-background p-4 rounded-5 mb-4 shadow">
     {{ form.submit(class="btn btn-success") }}
     <a href="{{ url_for('auth.for_reset_password') }}">Forgot Password?</a>
 </div>

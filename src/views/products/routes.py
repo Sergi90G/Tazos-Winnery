@@ -28,6 +28,7 @@ def add_product():
         new_product = Product(name=form.name.data, description=form.description.data, price=form.price.data, photo=form.photo.data)
         new_product.create()
         return redirect(url_for('products.all_products'))
+    flash("ახალი პროდუქტი დაემატა", "success")
 
     return render_template("add_product.html", form=form)
 
@@ -43,6 +44,7 @@ def edit_product(id):
         product.price = form.price.data
         product.photo = form.photo.data
         product.save()
+        flash('პროდუქტი წარმატებით დარედაქტირდა', 'success')
         return redirect(url_for('products.all_products'))
 
     return render_template("edit_product.html", form=form)
@@ -53,7 +55,7 @@ def edit_product(id):
 def delete_product(id):
     product = Product.query.get(id)
     product.delete()
-    flash("პროდუქტი წაიშალა")
+    flash("პროდუქტი წაიშალა", "success")
     return redirect(url_for('products.all_products'))
 
 @product_blueprint.route("/buy_product/<int:id>")
@@ -61,7 +63,7 @@ def delete_product(id):
 def buy_product(id):
     product = Product.query.get(id)
 
-    flash("გილოცავთ თქვენ შეიძინეთ პროდუქტი")
+    flash("გილოცავთ თქვენ შეიძინეთ პროდუქტი", "success")
     return render_template("buy_product.html", product=product)
 
 
