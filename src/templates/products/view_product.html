@@ -1,7 +1,7 @@
 {% extends "layout/base.html" %}
 
 {% block title %}
- wine products | Tazoswinery.ge
+ Wine Products | Tazoswinery.ge
 {% endblock %}
 
 {% block body %}
@@ -18,8 +18,8 @@
    {% endwith %}
 
   <div class="container mt-4 bg-light rounded-3 shadow custom2-background">
-     <h1>პროდუქტის აღწერა</h1>
     <div class="row">
+        <h1>პროდუქტის აღწერა</h1>
         <table class="table">
             <thead>
             <tr>
@@ -41,6 +41,9 @@
             </tr>
             </tbody>
         </table>
+        <div><a href="{{ url_for('products.all_products') }}" class="btn btn-primary">Back to Products</a>
+        </div>
+
     </div>
   </div>
 {% endblock %}

@@ -1,5 +1,5 @@
 from flask import render_template, Blueprint, flash, url_for, session, redirect, request
-from os import path
+from os import path, remove
 from src.views.main.forms import AboutForm
 from src.config import Config
 from flask_login import login_required, current_user
@@ -39,10 +39,22 @@ def profile():
 @main_blueprint.route("/delete_profile_photo/<int:id>")
 @login_required
 def delete_profile_photo(id):
-    delete_photo = profile_photo.query.get(id)
-    profile_photo.delete()
-    flash("ფოტო წაიშალა", "success")
-    return redirect(url_for('profile.html'))
+
+    current_user = User.query.get(id)
+
+    if current_user:
+        if current_user.profile_photo:
+            photo_path = path.join(Config.UPLOAD_FOLDER, path.basename(current_user.profile_photo))
+            if path.exists(photo_path):
+                remove(photo_path)
+
+        current_user.profile_photo = None
+        db.session.commit()
+
+        flash("Profile photo deleted successfully.", "success")
+
+    return redirect(url_for("main.profile"))
+
 
 @main_blueprint.route("/about", methods=['GET','POST'])
 def about():

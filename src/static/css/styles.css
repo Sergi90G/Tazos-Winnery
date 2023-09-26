@@ -260,3 +260,7 @@ body > div.container.mt-3 > div {
         display: inline-block;
         margin-left: 5px; /* Adjust spacing */
     }
+
+.language-flags {
+    margin-right: 20px; /* Adjust the margin as needed */
+}

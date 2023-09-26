@@ -5,46 +5,50 @@ from string import ascii_uppercase, ascii_lowercase, digits, punctuation
 from src.models import User
 
 class LoginForm(FlaskForm):
-    username = StringField("Username", validators=[DataRequired()])
-    password = PasswordField("Password", validators=[DataRequired()])
+    username = StringField("Username", validators=[DataRequired()], render_kw={"placeholder": "შეიყვანეთ სახელი"})
+    password = PasswordField("Password", validators=[DataRequired()], render_kw={"placeholder": "შეიყვანეთ პაროლი"})
     submit = SubmitField("ავტორიზაცია")
 
 class ForResetPasswordForm(FlaskForm):
-    email = EmailField("Email")
+    email = EmailField("Email", render_kw={"placeholder": "შეიყვანეთ ელ-ფოსტა"})
     submit = SubmitField("გამოგზავნა")
 
 #ელფოსტით აქტივაციის კოდის ხელახლა გამოგზავნის ფორმა
 class ResendKeyForm(FlaskForm):
-    email = EmailField("Email")
+    email = EmailField("Email", render_kw={"placeholder": "შეიყვანეთ ელ-ფოსტა"})
     submit = SubmitField("გამოგზავნა")
 
     def validate_email(self, field):
         user = User.query.filter_by(email=field.data).first()
         if not user:
-            raise ValidationError("აღნიშნული ელფოსტით მომხმარებელი არ იძებნება")
+            raise ValidationError("აღნიშნული ელფოსტით მომხმარებელი არ იძებნება", "error")
 
         if user.confirmed:
-            raise ValidationError("მომხმარებელი გააქტიურებულია")
+            raise ValidationError("მომხმარებელი გააქტიურებულია", "success")
 
 
 
 
 #პაროლისთის
 class ResetPasswordForm(FlaskForm):
-    new_password = PasswordField("password", validators=[DataRequired()])
-    confirm_new_password = PasswordField("repeat password", validators=[(DataRequired())])
+    new_password = PasswordField("password", validators=[DataRequired()], render_kw={"placeholder": "ახალი პაროლი"})
+    confirm_new_password = PasswordField("repeat password", validators=[(DataRequired())],
+                                         render_kw={"placeholder": "გაიმეორეთ ახალი პაროლი"})
     submit = SubmitField("პაროლის შეცვლა")
 
 
 class RegisterForm(FlaskForm):
 
-    username = StringField("სახელი", validators=[(DataRequired())])
-    password = PasswordField("პაროლი *",validators=[DataRequired(), length(min=5, max=15, message="შეიყვანეთ მინიმუმ 5 და მაქსიმუმ 15 სიმბოლო")])
+    username = StringField("სახელი", validators=[(DataRequired())], render_kw={"placeholder": "შეიყვანეთ სახელი"})
+    password = PasswordField("პაროლი *",validators=[DataRequired(),
+                                                    length(min=5, max=15, message="შეიყვანეთ მინიმუმ 5 და მაქსიმუმ 15 სიმბოლო")],
+                             render_kw={"placeholder": "შეიყვანეთ პაროლი"})
     gender = RadioField("აირჩიეთ სქესი", choices=["მამრობითი","მდედრობითი"], validators=[(DataRequired())])
     birthday = DateField("დაბადების თარიღი",validators=[(DataRequired())])
-    email = EmailField("ელ-ფოსტა")
+    email = EmailField("ელ-ფოსტა", render_kw={"placeholder": "შეიყვანეთ ელ-ფოსტა"})
     repeat_password = PasswordField("გაიმეორეთ პაროლი *",
-                                    validators=[DataRequired(), equal_to("password", message="პაროელები არ ემთხვევა")])
+                                    validators=[DataRequired(), equal_to("password", message="პაროელები არ ემთხვევა")],
+                                    render_kw={"placeholder": "გაიმეორეთ პაროლი"})
 
     submit = SubmitField("რეგისტრაცია")
 

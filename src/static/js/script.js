@@ -14,6 +14,8 @@ const carousel = document.querySelector('.carousel');
     });
   }
 
+
+
   function showNextImage() {
     currentIndex = (currentIndex + 1) % totalImages;
     showImage(currentIndex);
@@ -57,3 +59,16 @@ const carousel = document.querySelector('.carousel');
         $('.file-upload-content').hide();
         $('.image-upload-wrap').show();
     }
+
+function changeLanguage(locale) {
+    fetch(`/change_language?locale=${locale}`, {
+        method: 'GET'
+    }).then(response => {
+        if (response.ok) {
+            // Reload the page or update the content to reflect the new language.
+            location.reload();
+        }
+    });
+}
+
+
