@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-03 22:42+0400\n"
+"POT-Creation-Date: 2023-09-30 20:34+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,37 +17,314 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: src/templates/layout/navbar.html:26
-msgid "Logout"
+#: src/templates/auth/login.html:35
+msgid "Forgot Password?"
+msgstr ""
+
+#: src/templates/auth/register.html:51
+msgid "რეგისტრაცია უკვე გაიარეთ?"
+msgstr ""
+
+#: src/templates/layout/navbar.html:17
+msgid "Home"
+msgstr ""
+
+#: src/templates/layout/navbar.html:18
+msgid "About"
+msgstr ""
+
+#: src/templates/layout/navbar.html:19
+msgid "Products"
+msgstr ""
+
+#: src/templates/layout/navbar.html:21
+msgid "Profile"
+msgstr ""
+
+#: src/templates/layout/navbar.html:22
+msgid "Cart"
 msgstr ""
 
 #: src/templates/layout/navbar.html:28
+msgid "Admin Panel"
+msgstr ""
+
+#: src/templates/layout/navbar.html:51
+msgid "Logout"
+msgstr ""
+
+#: src/templates/layout/navbar.html:54
 msgid "Login"
 msgstr ""
 
-#: src/templates/layout/navbar.html:29
+#: src/templates/layout/navbar.html:55
 msgid "Register"
 msgstr ""
 
-#: src/templates/main/index.html:5
+#: src/templates/main/about.html:20
+msgid "ჩვენს შესახებ"
+msgstr ""
+
+#: src/templates/main/about.html:21
 msgid ""
 "საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,\n"
 "    ქართული ვაზის ჯიშებისგან ტრადიციული მეთოდებით დაყენებული ღვინო "
 "წარმოადგენს ჩვენს პროდუქტს.\n"
-"    ჩვენი მთავარ მიზანია ხარისხი და არა რაოდენობა.\n"
-"    საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს განთავსებას, "
-"გასტრონომიას."
+"    ჩვენთვის პირველ რიგში მნიშვნელოვანია ხარისხი და არა რაოდენობა. "
+"საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს\n"
+"    განთავსებას, შემეცნებით აქტივობებს და გასტრონომიას. ჩვენი მისამართია "
+"აბაშის რაიონი სოფელი მარანი მე-7 ქუჩა ბინა  №18,\n"
+"    მარანთან ერთად გვაქვს საოჯახო სასტუმრო და ღვინის სადეგუსტაციო სივრცე,"
+" სადაც სტუმრებს შეუძლიათ დააგემოვნონ,\n"
+"    როგორც აღმოსავლეთ, ასევე დასავლეთ საქართველოს უნიკალური ყურძნის "
+"ჯიშებისგან დაყენებული ღვინოები. წლების განმავლობაში\n"
+"    დაგროვილი გამოცდილება გვაძლევს საშუალებას დავამზადოთ ღვინო ტრადიციული"
+" და ევროპული მეთოდით, ამისთვის ვიყენებთ\n"
+"     სხვადასხვა რეგიონის ჯიშის ყურძენს ესენია: რქაწითელი, საფერავი,\n"
+"    ცოლიკოური, ციცქა, კაბერნე, თავკვერი, კახური მწვანე. ღვინოები "
+"დაყენებულია კახური (ქვევრში), იმერული და კლასიკური ტექნოლოგიით.\n"
+"    მარანს გააჩნია საკუთარი ვენახები იმერეთში, ასევე შევისყიდით "
+"სხვადასხვა რეგიონებიდან, სანდო მევენახეებისგან.\n"
+"    დეგუსტაციები ტარდება ყოველდღიურად, 13სთ-დან 21სთ-მდე.\n"
+"    სტუმრებს დეგუსტაციის შემდეგ შესაძლებლობა ეძლევათ თავად შეარჩიონ და "
+"შეიძინონ, ჩვენს მიერ ბოთლში ჩამოსხმული\n"
+"    ნატურალური ღვინოები.\n"
+"    'თაზოს მარან'-ის  საოჯახო სასტუმროს გააჩნია ოთხი ორკაციანი ნომერი, "
+"ყველა საჭირო ივენტარით და პირობებით, ასევე ტერასა საიდანაც\n"
+"    იშლება ლამაზი ხედები."
 msgstr ""
 
-#: src/templates/main/index.html:43
+#: src/templates/main/about.html:41
+msgid "ონლაინ პროდუქტის შესაძენად საჭიროა გაიაროთ ავტორიზაცია"
+msgstr ""
+
+#: src/templates/main/about.html:42
+msgid "დააჭირე აქ"
+msgstr ""
+
+#: src/templates/main/about.html:47
+msgid "რას გთავაზობთ?"
+msgstr ""
+
+#: src/templates/main/about.html:52
+msgid "მომსახურება"
+msgstr ""
+
+#: src/templates/main/about.html:54
+msgid "საოჯახო სასტუმრო"
+msgstr ""
+
+#: src/templates/main/about.html:55
+msgid "გასტროტურიზმი"
+msgstr ""
+
+#: src/templates/main/about.html:56
+msgid "შემეცნებითი აქტივობები"
+msgstr ""
+
+#: src/templates/main/about.html:57
+msgid "დეგუსტაცია"
+msgstr ""
+
+#: src/templates/main/about.html:61
+msgid "Product"
+msgstr ""
+
+#: src/templates/main/about.html:63 src/templates/products/products.html:23
+msgid "ღვინო"
+msgstr ""
+
+#: src/templates/main/about.html:64
+msgid "ღვინის ტკბილისგან დამზადებული ტკბილეული"
+msgstr ""
+
+#: src/templates/main/about.html:65
+msgid "სხვა ალკოჰოლური სასმელები"
+msgstr ""
+
+#: src/templates/main/about.html:66
+msgid "ტრადიციული სამზარეულო"
+msgstr ""
+
+#: src/templates/main/index.html:19
+msgid "გამარჯობა"
+msgstr ""
+
+#: src/templates/main/index.html:27
+msgid ""
+"A family winery called Tazo's Winery was established in 2004,\n"
+"Different products of all varieties. Family cellar for guests with wine\n"
+"Together we offer accommodation in a family hotel,\n"
+"as well as gastronomy and various cognitive activities.Our motto is wind\n"
+"not quantity."
+msgstr ""
+
+#: src/templates/main/index.html:33
+msgid "ვრცლად"
+msgstr ""
+
+#: src/templates/main/index.html:50
 msgid "Contact Us"
 msgstr ""
 
-#: src/templates/main/index.html:49
+#: src/templates/main/index.html:59
 msgid "Contact"
 msgstr ""
 
+#: src/templates/main/index.html:61
+msgid "Call now"
+msgstr ""
+
 #: src/templates/main/index.html:66
-msgid "გამარჯობა"
+msgid "Address"
+msgstr ""
+
+#: src/templates/main/index.html:70
+msgid "Get directions"
+msgstr ""
+
+#: src/templates/main/index.html:71
+msgid "მე-7 ქუჩა"
+msgstr ""
+
+#: src/templates/main/index.html:72
+msgid "პირველი მაისი 0210"
+msgstr ""
+
+#: src/templates/main/index.html:73
+msgid "საქართველო"
+msgstr ""
+
+#: src/templates/main/index.html:77
+msgid "Business Hours"
+msgstr ""
+
+#: src/templates/main/index.html:79
+msgid "ორშ:"
+msgstr ""
+
+#: src/templates/main/index.html:80
+msgid "სამ:"
+msgstr ""
+
+#: src/templates/main/index.html:81
+msgid "ოთხ:"
+msgstr ""
+
+#: src/templates/main/index.html:82
+msgid "ხუთ:"
+msgstr ""
+
+#: src/templates/main/index.html:83
+msgid "პარ:"
+msgstr ""
+
+#: src/templates/main/index.html:84
+msgid "შაბ:"
+msgstr ""
+
+#: src/templates/main/index.html:85
+msgid "კვი:"
+msgstr ""
+
+#: src/templates/main/profile.html:39
+msgid "მოგესალმები"
+msgstr ""
+
+#: src/templates/main/profile.html:40
+msgid "შენს მთავარ გვერდზე, აქ შეგიძლია ნახო შენი პირადი მონაცემები:"
+msgstr ""
+
+#: src/templates/main/profile.html:42
+msgid "სახელი:"
+msgstr ""
+
+#: src/templates/main/profile.html:45
+msgid "ელ-ფოსტა:"
+msgstr ""
+
+#: src/templates/main/profile.html:47
+msgid "სქესი:"
+msgstr ""
+
+#: src/templates/main/profile.html:49
+msgid "დაბადების თარიღი:"
+msgstr ""
+
+#: src/templates/main/profile.html:61
+msgid "სურათის ატვირთვა"
+msgstr ""
+
+#: src/templates/main/profile.html:67
+msgid "პროფილის ფოტოს წაშლა"
+msgstr ""
+
+#: src/templates/products/buy_product.html:22
+msgid "პროდუქტის შეძენა"
+msgstr ""
+
+#: src/templates/products/buy_product.html:26
+#: src/templates/products/view_product.html:26
+msgid "სახელი"
+msgstr ""
+
+#: src/templates/products/buy_product.html:27
+#: src/templates/products/view_product.html:27
+msgid "აღწერა"
+msgstr ""
+
+#: src/templates/products/buy_product.html:28
+#: src/templates/products/view_product.html:28
+msgid "ფასი"
+msgstr ""
+
+#: src/templates/products/buy_product.html:29
+#: src/templates/products/view_product.html:29
+msgid "ჩამოსხმის წელი"
+msgstr ""
+
+#: src/templates/products/buy_product.html:43
+#: src/templates/products/view_product.html:44
+msgid "Back to Products"
+msgstr ""
+
+#: src/templates/products/buy_product.html:46
+msgid "გადახდის მეთოდები:"
+msgstr ""
+
+#: src/templates/products/products.html:34
+msgid "ლარი"
+msgstr ""
+
+#: src/templates/products/products.html:37
+msgid "Details"
+msgstr ""
+
+#: src/templates/products/products.html:40
+msgid "Edit"
+msgstr ""
+
+#: src/templates/products/products.html:41
+msgid "Delete"
+msgstr ""
+
+#: src/templates/products/products.html:42
+msgid "Add"
+msgstr ""
+
+#: src/templates/products/products.html:44
+msgid "Buy"
+msgstr ""
+
+#: src/templates/products/products.html:45
+msgid "add to cart"
+msgstr ""
+
+#: src/templates/products/view_product.html:22
+msgid "პროდუქტის აღწერა"
+msgstr ""
+
+#: src/templates/products/view_product.html:30
+msgid "კატეგორია"
 msgstr ""
 

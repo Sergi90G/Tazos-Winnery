@@ -8,7 +8,7 @@
         <ul class=flashes>
         {% for  category, message in messages %}
             <li class="{{ category }}">
-                 {{ message }}
+                 {{ _(message) }}
             </li>
         {% endfor %}
         </ul>
@@ -24,12 +24,13 @@
     <span class="company-name">Tazo's Winery</span>
 </h1>
 <hr class="black-bar">
-<i><b><p class="welcometxt">{{ _("საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,
-    ქართული ვაზის ჯიშებისგან ტრადიციული მეთოდებით დაყენებული ღვინო წარმოადგენს ჩვენს პროდუქტს.
-    ჩვენი მთავარ მიზანია ხარისხი და არა რაოდენობა.
-    საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს განთავსებას, გასტრონომიას.") }}  </p></b></i>
+<i><b><p class="welcometxt">{{ _("A family winery called Tazo's Winery was established in 2004,
+Different products of all varieties. Family cellar for guests with wine
+Together we offer accommodation in a family hotel,
+as well as gastronomy and various cognitive activities.Our motto is wind
+not quantity.") }}</p></b></i>
 <hr class="black-bar">
-        <a href="{{ url_for('main.about') }}" class="btn btn-dark">ვრცლად</a>
+        <a href="{{ url_for('main.about') }}" class="btn btn-dark">{{ _("ვრცლად") }}</a>
 <hr class="black-bar">
         <div class="carousel" >
             <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?ixlib=rb-4.
@@ -57,31 +58,31 @@ s%20Marani!5e0!3m2!1ska!2sge!4v1690825957562!5m2!1ska!2sge" width="900" height="
      <div class="d-inline-block">
     <b>{{ _("Contact") }}</b><br>
     <a href="tel:+995-598-12-90-99" data-tracking-element-type="3"
-       jslog="56037; track:impression,click" itemprop="telephone" class="btn btn-dark">Call now</a><br>
+       jslog="56037; track:impression,click" itemprop="telephone" class="btn btn-dark">{{ _("Call now") }}</a><br>
     <b>598-12-90-99</b>
          </div>
 
          <div class="d-inline-block" >
-        <b>Address</b><br>
+        <b>{{ _("Address") }}</b><br>
     <a class="btn btn-dark"
        href="https://www.google.com/maps/dir//Tazo%27s+Marani/
        data=!4m8!4m7!1m0!1m5!1m1!1s0x405cffa9dadd8d03:0x1c8c218b5785675d!2m2!1d42.281692899999996!2d42.1490904"
-       target="_blank" data-tracking-element-type="6" jslog="56039; track:impression,click" >Get directions</a>
-        <div>მე-7 ქუჩა</div>
-            <div>პირველი მაისი 0210</div>
-                <div>საქართველო</div>
+       target="_blank" data-tracking-element-type="6" jslog="56039; track:impression,click" >{{ _("Get directions") }}</a>
+        <div>{{ _("მე-7 ქუჩა") }}</div>
+            <div>{{ _("პირველი მაისი 0210") }}</div>
+                <div>{{ _("საქართველო") }}</div>
              </div>
 
           <div class="d-inline-block">
-    <b>Business Hours</b>
+    <b>{{ _("Business Hours") }}</b>
         <div class="d-inline-block"><table itemprop="openingHours"><tbody><tr>
-            <th class="x2TOCf">ორშ:</th><td class="o0m3Qb"><span class="WF8WNe">9:00 AM – 10:00 PM</span></td></tr>
-        <tr><th class="x2TOCf">სამ:</th><td class="o0m3Qb"><span class="WF8WNe">9:00 AM – 10:00 PM</span></td></tr><tr>
-            <th class="x2TOCf">ოთხ:</th><td class="o0m3Qb"><span class="WF8WNe">9:00 AM – 10:00 PM</span></td></tr><tr>
-            <th class="x2TOCf">ხუთ:</th><td class="o0m3Qb"><span class="WF8WNe">9:00 AM – 10:00 PM</span></td></tr><tr>
-            <th class="x2TOCf">პარ:</th><td class="o0m3Qb"><span class="WF8WNe">9:00 AM – 10:00 PM</span></td></tr><tr>
-            <th class="x2TOCf">შაბ:</th><td class="o0m3Qb"><span class="WF8WNe">9:00 AM – 10:00 PM</span></td></tr><tr>
-            <th class="x2TOCf">კვი:</th><td class="o0m3Qb"><span class="WF8WNe">9:00 AM – 10:00 PM</span></td></tr>
+            <th>{{ _("ორშ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr>
+        <tr><th>{{ _("სამ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr><tr>
+            <th>{{ _("ოთხ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr><tr>
+            <th>{{ _("ხუთ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr><tr>
+            <th>{{ _("პარ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr><tr>
+            <th>{{ _("შაბ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr><tr>
+            <th>{{ _("კვი:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr>
         </tbody></table></div>
               </div>
     </div>

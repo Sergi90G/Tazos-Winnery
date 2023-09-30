@@ -3,6 +3,7 @@ from wtforms.fields import StringField, PasswordField, RadioField, DateField,  S
 from wtforms.validators import DataRequired, equal_to, length, ValidationError
 from string import ascii_uppercase, ascii_lowercase, digits, punctuation
 from src.models import User
+from flask_babel import _
 
 class LoginForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()], render_kw={"placeholder": "შეიყვანეთ სახელი"})
@@ -77,10 +78,10 @@ class RegisterForm(FlaskForm):
                     contains_symbols = True
 
             if not contains_uppercase:
-                raise ValidationError("პაროლი უნდა შეიცავდეს დიდ ასოებს", "error")
+                raise ValidationError(_("პაროლი უნდა შეიცავდეს დიდ ასოებს"), "error")
             elif not contains_lowercase:
-                raise ValidationError("პაროლი უნდა შეიცავდეს პატარა ასოებს", "error")
+                raise ValidationError(_("პაროლი უნდა შეიცავდეს პატარა ასოებს"), "error")
             elif not contains_digits:
-                raise ValidationError("პაროლი უნდა შეიცავდეს ციფრებს", "error")
+                raise ValidationError(_("პაროლი უნდა შეიცავდეს ციფრებს"), "error")
             elif not contains_symbols:
-                raise ValidationError("პაროლი უნდა შეიცავდეს სიმბოლოებს", "error")
+                raise ValidationError(_("პაროლი უნდა შეიცავდეს სიმბოლოებს"), "error")

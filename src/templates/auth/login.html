@@ -1,6 +1,6 @@
 {% extends "layout/base.html" %}
 {% block title %}
-login | Tazoswinery.ge
+Login | Tazoswinery.ge
 {% endblock %}
 
 {% block body %}
@@ -10,7 +10,7 @@ login | Tazoswinery.ge
         <ul class=flashes>
         {% for  category, message in messages %}
             <li class="{{ category }}">
-                {{ message }}
+                {{ _(message) }}
             </li>
         {% endfor %}
         </ul>
@@ -32,7 +32,7 @@ login | Tazoswinery.ge
  </div>
  <div class="custom2-background p-4 rounded-5 mb-4 shadow">
     {{ form.submit(class="btn btn-success") }}
-    <a href="{{ url_for('auth.for_reset_password') }}">Forgot Password?</a>
+    <a href="{{ url_for('auth.for_reset_password') }}">{{ _("Forgot Password?") }}</a>
 </div>
 </form>
 

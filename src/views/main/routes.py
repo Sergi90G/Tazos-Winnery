@@ -6,6 +6,7 @@ from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
 from src.extensions import db
 from src.models import User
+from flask_babel import _
 
 TEMPLATES_FOLDER = path.join(Config.BASE_DIRECTORY, "templates", "main")
 main_blueprint = Blueprint("main", __name__, template_folder=TEMPLATES_FOLDER)
@@ -32,7 +33,7 @@ def profile():
 
                 db.session.commit()
 
-                flash("Profile image updated successfully.", 'success')
+                flash(_("Profile image updated successfully."), 'success')
 
     return render_template("profile.html", user=current_user)
 
@@ -51,7 +52,7 @@ def delete_profile_photo(id):
         current_user.profile_photo = None
         db.session.commit()
 
-        flash("Profile photo deleted successfully.", "success")
+        flash(_("Profile photo deleted successfully."), "success")
 
     return redirect(url_for("main.profile"))
 

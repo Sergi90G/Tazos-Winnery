@@ -14,18 +14,18 @@
   </button>
        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                {{ create_navlink('main.index', 'Home') }}
-                {{ create_navlink('main.about', 'About') }}
-                {{ create_navlink('products.all_products', 'Products') }}
+                {{ create_navlink('main.index', _('Home')) }}
+                {{ create_navlink('main.about', _('About')) }}
+                {{ create_navlink('products.all_products', _('Products')) }}
             {% if current_user.is_authenticated %}
-                {{ create_navlink('main.profile', 'Profile', 'fas fa-user-circle') }}
-                {{ create_navlink('cart.view_cart', 'Cart', 'fas fa-shopping-cart') }}
+                {{ create_navlink('main.profile', _('Profile'), 'fas fa-user-circle') }}
+                {{ create_navlink('cart.view_cart', _('Cart'), 'fas fa-shopping-cart') }}
             {% endif %}
 
 
 
                 {% if current_user.is_authenticated and current_user.role.name == "admin" %}
-                    <a href="{{ url_for("admin.index") }}" class="nav-link">Admin Panel</a>
+                    <a href="{{ url_for("admin.index") }}" class="nav-link">{{ _("Admin Panel") }}</a>
                 {% endif %}
             </div>
         </div>

@@ -10,7 +10,7 @@
         <ul class=flashes>
         {% for  category, message in messages %}
             <li class="{{ category }}">
-                {{ message }}
+                {{ _(message) }}
             </li>
         {% endfor %}
         </ul>

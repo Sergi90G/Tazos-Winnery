@@ -8,7 +8,7 @@
         <ul class=flashes>
         {% for  category, message in messages %}
             <li class="{{ category }}">
-                {{ message }}
+                {{ _(message) }}
             </li>
         {% endfor %}
         </ul>
@@ -48,7 +48,7 @@
 
         <div class="custom2-background p-3 rounded-5 mb-4 shadow">
             {{ form.submit(class="btn btn-success" ) }}
-            <a href="{{ url_for('auth.login') }}">რეგისტრაცია უკვე გაიარეთ?</a>
+            <a href="{{ url_for('auth.login') }}">{{ _("რეგისტრაცია უკვე გაიარეთ?") }}</a>
         </div>
         <div class="custom2-background p-4 rounded-5 mb-4 shadow">
          <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">

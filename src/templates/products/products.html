@@ -12,15 +12,15 @@
         <ul class=flashes>
         {% for  category, message in messages %}
             <li class="{{ category }}">
-                {{ message }}
+                {{ _(message) }}
             </li>
         {% endfor %}
         </ul>
     {% endif %}
    {% endwith %}
-<div class="container mt-4 custom2-background">
+<div class="custom3-background">
     <div class="row">
-    <h1>ღვინო</h1>
+    <h1>{{ _("ღვინო") }}</h1>
     <hr>
 <div class="card-container">
     {% for product in prlist %}
@@ -31,26 +31,26 @@
           <div class="discount-badge">-10%</div>
             <div class="card-body">
                 <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text" style="font-weight: bold;">{{ product.price }} ლარი</p>
+                <p class="card-text" style="font-weight: bold;">{{ product.price }} {{ _("ლარი") }}</p>
                 <p class="card-text" style="font-style: italic;">{{ product.category }}</p>
                 <p class="card-text" style="color: red;">{{ product.yearofbottling }}</p>
-                <a href="{{ url_for('products.view_product', id=product.id) }}" class="btn btn-primary">Details</a>
+                <a href="{{ url_for('products.view_product', id=product.id) }}" class="btn btn-primary">{{ _("Details") }}</a>
 
                 {% if current_user.is_authenticated and current_user.role.name == "admin" %}
-                    <a href="{{ url_for('products.edit_product', id=product.id) }}" class="btn btn-warning">Edit</a>
-                    <a href="{{ url_for('products.delete_product', id=product.id) }}" class="btn btn-danger">Delete</a>
-                    <a href="{{ url_for('products.add_product', id=product.id) }}" class="btn btn-success">Add</a>
+                    <a href="{{ url_for('products.edit_product', id=product.id) }}" class="btn btn-warning">{{ _("Edit") }}</a>
+                    <a href="{{ url_for('products.delete_product', id=product.id) }}" class="btn btn-danger">{{ _("Delete") }}</a>
+                    <a href="{{ url_for('products.add_product', id=product.id) }}" class="btn btn-success">{{ _("Add") }}</a>
                 {% elif current_user.is_authenticated and current_user.role.name != "admin" %}
-                    <a href="{{ url_for('products.buy_product', id=product.id) }}" class="btn btn-warning">Buy</a>
-                    <a href="{{ url_for('cart.view_cart', id=product.id) }}" class="fa fa-shopping-cart btn btn-success">add to cart</a>
+                    <a href="{{ url_for('products.buy_product', id=product.id) }}" class="btn btn-warning">{{ _("Buy") }}</a>
+                    <a href="{{ url_for('cart.view_cart', id=product.id) }}" class="fa fa-shopping-cart btn btn-success">{{ _("add to cart") }}</a>
                 {% endif %}
             </div>
         </div>
+
     {% endfor %}
-</div>
     </div>
-
-
+    </div>
+</div>
 
 
 {% endblock %}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-03 22:42+0400\n"
+"POT-Creation-Date: 2023-09-30 21:02+0400\n"
 "PO-Revision-Date: 2023-08-03 22:49+0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,39 +18,445 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: src/templates/layout/navbar.html:26
+#: src/templates/auth/login.html:35
+msgid "Forgot Password?"
+msgstr "Forgot Password?"
+
+#: src/templates/auth/register.html:51
+msgid "რეგისტრაცია უკვე გაიარეთ?"
+msgstr "Have you registered yet?"
+
+#: src/templates/layout/navbar.html:17
+msgid "Home"
+msgstr "Home"
+
+#: src/templates/layout/navbar.html:18
+msgid "About"
+msgstr "About"
+
+#: src/templates/layout/navbar.html:19
+#, fuzzy
+msgid "Products"
+msgstr "Products"
+
+#: src/templates/layout/navbar.html:21
+msgid "Profile"
+msgstr "Profile"
+
+#: src/templates/layout/navbar.html:22
+msgid "Cart"
+msgstr "Cart"
+
+#: src/templates/layout/navbar.html:28
+msgid "Admin Panel"
+msgstr "Admin Panel"
+
+#: src/templates/layout/navbar.html:51
 msgid "Logout"
 msgstr "Logout"
 
-#: src/templates/layout/navbar.html:28
+#: src/templates/layout/navbar.html:54
 msgid "Login"
 msgstr "Login"
 
-#: src/templates/layout/navbar.html:29
+#: src/templates/layout/navbar.html:55
 msgid "Register"
 msgstr "Register"
 
-#: src/templates/main/index.html:5
+#: src/templates/main/about.html:20
+msgid "ჩვენს შესახებ"
+msgstr "About us"
+
+#: src/templates/main/about.html:21
 msgid ""
 "საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,\n"
 "    ქართული ვაზის ჯიშებისგან ტრადიციული მეთოდებით დაყენებული ღვინო "
 "წარმოადგენს ჩვენს პროდუქტს.\n"
-"    ჩვენი მთავარ მიზანია ხარისხი და არა რაოდენობა.\n"
-"    საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს განთავსებას, "
-"გასტრონომიას."
-msgstr "business familly winery name is Tazo's Winnery start date 2004,"
- " from georgian grade with tradicional metods made wine, this is our product. "
- " our firth goal is made natural wine, dont to mach. familly winery with wine costumers give a familly hostel"
+"    ჩვენთვის პირველ რიგში მნიშვნელოვანია ხარისხი და არა რაოდენობა. "
+"საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს\n"
+"    განთავსებას, შემეცნებით აქტივობებს და გასტრონომიას. ჩვენი მისამართია "
+"აბაშის რაიონი სოფელი მარანი მე-7 ქუჩა ბინა  №18,\n"
+"    მარანთან ერთად გვაქვს საოჯახო სასტუმრო და ღვინის სადეგუსტაციო სივრცე,"
+" სადაც სტუმრებს შეუძლიათ დააგემოვნონ,\n"
+"    როგორც აღმოსავლეთ, ასევე დასავლეთ საქართველოს უნიკალური ყურძნის "
+"ჯიშებისგან დაყენებული ღვინოები. წლების განმავლობაში\n"
+"    დაგროვილი გამოცდილება გვაძლევს საშუალებას დავამზადოთ ღვინო ტრადიციული"
+" და ევროპული მეთოდით, ამისთვის ვიყენებთ\n"
+"     სხვადასხვა რეგიონის ჯიშის ყურძენს ესენია: რქაწითელი, საფერავი,\n"
+"    ცოლიკოური, ციცქა, კაბერნე, თავკვერი, კახური მწვანე. ღვინოები "
+"დაყენებულია კახური (ქვევრში), იმერული და კლასიკური ტექნოლოგიით.\n"
+"    მარანს გააჩნია საკუთარი ვენახები იმერეთში, ასევე შევისყიდით "
+"სხვადასხვა რეგიონებიდან, სანდო მევენახეებისგან.\n"
+"    დეგუსტაციები ტარდება ყოველდღიურად, 13სთ-დან 21სთ-მდე.\n"
+"    სტუმრებს დეგუსტაციის შემდეგ შესაძლებლობა ეძლევათ თავად შეარჩიონ და "
+"შეიძინონ, ჩვენს მიერ ბოთლში ჩამოსხმული\n"
+"    ნატურალური ღვინოები.\n"
+"    'თაზოს მარან'-ის  საოჯახო სასტუმროს გააჩნია ოთხი ორკაციანი ნომერი, "
+"ყველა საჭირო ივენტარით და პირობებით, ასევე ტერასა საიდანაც\n"
+"    იშლება ლამაზი ხედები."
+msgstr ""
+"A family winery called Tazo's Winnery was established in 2004,\n"
+"Wine made by traditional methods from Georgian grape varietiesRepresents "
+"our product.\n"
+"First of all, quality is important for us, not quantity.Family winery "
+"offers visitors with wine\n"
+"Accommodation, cognitive activities and gastronomy. Our address is Abashi"
+" District, Marani Village, 7th Street, Apartment No. 18,\n"
+"Together with the cellar, we have a family hotel and a wine tasting "
+"space, where guests can taste,\n"
+"Unique grapes of both East and West GeorgiaVarietal wines. Over the years"
+"\n"
+"Accumulated experience allows us to make traditional wine and in the "
+"European way, we use it\n"
+"Grape varieties from different regions are: Rkatsiteli, Saferavi,\n"
+"Tsolikouri, Tsitska, Cabernet, Tavkveri, Kakhuri Green. WinesA hook (in "
+"the pitcher) is installed, using both Imeric and Classic technology.\n"
+"The winery has its own vineyards in Imereti, we will also buy themFrom "
+"different regions, from trusted growers.\n"
+" Tastings are held daily, from 1:00 p.m. to 9:00 p.m.\n"
+"After the tasting, the guests have the opportunity to choose andBuy it, "
+"bottled by us\n"
+" Natural wines.\n"
+"'Tazos Maran' family hotel has four double rooms, With all the necessary "
+"inventory and conditions, as well as a terrace from which\n"
+"There are beautiful views."
 
-#: src/templates/main/index.html:43
+#: src/templates/main/about.html:41
+msgid "ონლაინ პროდუქტის შესაძენად საჭიროა გაიაროთ ავტორიზაცია"
+msgstr "To buy a product online you need to be authenticated  "
+
+#: src/templates/main/about.html:42
+msgid "დააჭირე აქ"
+msgstr "Click here"
+
+#: src/templates/main/about.html:47
+msgid "რას გთავაზობთ?"
+msgstr "What do you offer?"
+
+#: src/templates/main/about.html:52
+msgid "მომსახურება"
+msgstr "Service"
+
+#: src/templates/main/about.html:54
+msgid "საოჯახო სასტუმრო"
+msgstr "Family hotel"
+
+#: src/templates/main/about.html:55
+msgid "გასტროტურიზმი"
+msgstr "Gastrotourism"
+
+#: src/templates/main/about.html:56
+msgid "შემეცნებითი აქტივობები"
+msgstr "Cognitive activities"
+
+#: src/templates/main/about.html:57
+msgid "დეგუსტაცია"
+msgstr "Tasting"
+
+#: src/templates/main/about.html:61
+#, fuzzy
+msgid "Product"
+msgstr "Product"
+
+#: src/templates/main/about.html:63 src/templates/products/products.html:23
+msgid "ღვინო"
+msgstr "Wine"
+
+#: src/templates/main/about.html:64
+msgid "ღვინის ტკბილისგან დამზადებული ტკბილეული"
+msgstr "Sweets made from wine sweet"
+
+#: src/templates/main/about.html:65
+msgid "სხვა ალკოჰოლური სასმელები"
+msgstr "Other alcoholic beverages"
+
+#: src/templates/main/about.html:66
+msgid "ტრადიციული სამზარეულო"
+msgstr "Traditional cuisine"
+
+#: src/templates/main/index.html:19
+msgid "გამარჯობა"
+msgstr "Hello"
+
+#: src/templates/main/index.html:27
+msgid ""
+"A family winery called Tazo's Winery was established in 2004,\n"
+"Different products of all varieties. Family cellar for guests with wine\n"
+"Together we offer accommodation in a family hotel,\n"
+"as well as gastronomy and various cognitive activities.Our motto is wind\n"
+"not quantity."
+msgstr ""
+"A family winery called Tazo's Winery was established in 2004,\n"
+"Different products of all varieties. Family cellar for guests with wine\n"
+"Together we offer accommodation in a family hotel,\n"
+"as well as gastronomy and various cognitive activities.Our motto is wind\n"
+"not quantity."
+
+#: src/templates/main/index.html:33
+msgid "ვრცლად"
+msgstr "For more"
+
+#: src/templates/main/index.html:50
 msgid "Contact Us"
 msgstr "Contact Us"
 
-#: src/templates/main/index.html:49
+#: src/templates/main/index.html:59
 msgid "Contact"
 msgstr "Contact"
 
+#: src/templates/main/index.html:61
+msgid "Call now"
+msgstr "Call now"
+
 #: src/templates/main/index.html:66
-msgid "გამარჯობა"
-msgstr "Hello"
+msgid "Address"
+msgstr "Address"
+
+#: src/templates/main/index.html:70
+msgid "Get directions"
+msgstr "Get directions"
+
+#: src/templates/main/index.html:71
+msgid "მე-7 ქუჩა"
+msgstr "7th street"
+
+#: src/templates/main/index.html:72
+msgid "პირველი მაისი 0210"
+msgstr "Pirveli Maisi 0210"
+
+#: src/templates/main/index.html:73
+msgid "საქართველო"
+msgstr "Georgia"
+
+#: src/templates/main/index.html:77
+msgid "Business Hours"
+msgstr "Business Hours"
+
+#: src/templates/main/index.html:79
+msgid "ორშ:"
+msgstr "Mon:"
+
+#: src/templates/main/index.html:80
+msgid "სამ:"
+msgstr "Thue:"
+
+#: src/templates/main/index.html:81
+msgid "ოთხ:"
+msgstr "Wed:"
+
+#: src/templates/main/index.html:82
+msgid "ხუთ:"
+msgstr "Thu:"
+
+#: src/templates/main/index.html:83
+msgid "პარ:"
+msgstr "Fri:"
+
+#: src/templates/main/index.html:84
+msgid "შაბ:"
+msgstr "Sat:"
+
+#: src/templates/main/index.html:85
+msgid "კვი:"
+msgstr "Sun:"
+
+#: src/templates/main/profile.html:39
+msgid "მოგესალმები"
+msgstr "Welcome"
+
+#: src/templates/main/profile.html:40
+msgid "შენს მთავარ გვერდზე, აქ შეგიძლია ნახო შენი პირადი მონაცემები:"
+msgstr "to your main page, here you can see your information"
+
+#: src/templates/main/profile.html:42
+msgid "სახელი:"
+msgstr "Name:"
+
+#: src/templates/main/profile.html:45
+msgid "ელ-ფოსტა:"
+msgstr "Email:"
+
+#: src/templates/main/profile.html:47
+msgid "სქესი:"
+msgstr "Gender:"
+
+#: src/templates/main/profile.html:49
+msgid "დაბადების თარიღი:"
+msgstr "Date of birth:"
+
+#: src/templates/main/profile.html:61
+msgid "სურათის ატვირთვა"
+msgstr "Upload picture"
+
+#: src/templates/main/profile.html:67
+msgid "პროფილის ფოტოს წაშლა"
+msgstr "Delete Profile picture"
+
+#: src/templates/products/buy_product.html:22
+msgid "პროდუქტის შეძენა"
+msgstr "Buy product"
+
+#: src/templates/products/buy_product.html:26
+#: src/templates/products/view_product.html:26
+#, fuzzy
+msgid "სახელი"
+msgstr "Name"
+
+#: src/templates/products/buy_product.html:27
+#: src/templates/products/view_product.html:27
+msgid "აღწერა"
+msgstr "Description"
+
+#: src/templates/products/buy_product.html:28
+#: src/templates/products/view_product.html:28
+msgid "ფასი"
+msgstr "Price"
+
+#: src/templates/products/buy_product.html:29
+#: src/templates/products/view_product.html:29
+msgid "ჩამოსხმის წელი"
+msgstr "Year of bottling of wine"
+
+#: src/templates/products/buy_product.html:43
+#: src/templates/products/view_product.html:44
+msgid "Back to Products"
+msgstr "Back to Products"
+
+#: src/templates/products/buy_product.html:46
+msgid "გადახდის მეთოდები:"
+msgstr "Method of payment"
+
+#: src/templates/products/products.html:34
+msgid "ლარი"
+msgstr "Gel"
+
+#: src/templates/products/products.html:37
+msgid "Details"
+msgstr "Details"
+
+#: src/templates/products/products.html:40
+msgid "Edit"
+msgstr "Edit"
+
+#: src/templates/products/products.html:41
+msgid "Delete"
+msgstr "Delete"
+
+#: src/templates/products/products.html:42
+#, fuzzy
+msgid "Add"
+msgstr "Add"
+
+#: src/templates/products/products.html:44
+msgid "Buy"
+msgstr "Buy"
+
+#: src/templates/products/products.html:45
+msgid "add to cart"
+msgstr "add to cart"
+
+#: src/templates/products/view_product.html:22
+msgid "პროდუქტის აღწერა"
+msgstr "Product Description "
+
+#: src/templates/products/view_product.html:30
+msgid "კატეგორია"
+msgstr "Category"
+
+#: src/views/auth/forms.py:81
+msgid "პაროლი უნდა შეიცავდეს დიდ ასოებს"
+msgstr "Password must contain uppercase letters"
+
+#: src/views/auth/forms.py:83
+msgid "პაროლი უნდა შეიცავდეს პატარა ასოებს"
+msgstr "Password must contain lowercase letters"
+
+#: src/views/auth/forms.py:85
+msgid "პაროლი უნდა შეიცავდეს ციფრებს"
+msgstr "Password must contain numbers"
+
+#: src/views/auth/forms.py:87
+msgid "პაროლი უნდა შეიცავდეს სიმბოლოებს"
+msgstr "Password must contain characters"
+
+#: src/views/auth/routes.py:25
+msgid "აქტივაციის ლინკი გამოგზავნილია"
+msgstr "The activation link has been sent"
+
+#: src/views/auth/routes.py:42
+msgid "* აქტივაციის კოდი გამოგზავნილია"
+msgstr "* Activation code has been sent"
+
+#: src/views/auth/routes.py:56
+msgid "* აქტივაციის კოდი არასწორია ან გაუვიდა ვადა"
+msgstr "* Activation code is invalid or expired"
+
+#: src/views/auth/routes.py:61
+msgid "* მომხმარებელი უკვე გააქტიურებულია"
+msgstr "* User is already activated"
+
+#: src/views/auth/routes.py:76
+msgid "ეს მომხმარებელი ვერ მოიძებნა"
+msgstr "This user could not be found"
+
+#: src/views/auth/routes.py:80
+msgid "მეილი არ დადასტურდა"
+msgstr "Email not verified"
+
+#: src/views/auth/routes.py:84
+msgid "თქვენ წარმატებით გაიარეთ ავტორიზაცია!"
+msgstr "You are successfully authenticated!"
+
+#: src/views/auth/routes.py:92
+msgid "პაროლი არასწორია"
+msgstr "The password is incorrect"
+
+#: src/views/auth/routes.py:102
+msgid "თქვენ გამოხვედით საიტიდან"
+msgstr "You have left the site"
+
+#: src/views/auth/routes.py:114
+msgid "* პაროლის აღდგენის კოდი გამოგზავნილია"
+msgstr "* Password recovery code sent"
+
+#: src/views/auth/routes.py:130
+msgid "აქტივაციის კოდი არასწორია ან გაუვიდა ვადა"
+msgstr "The activation code is invalid or has expired"
+
+#: src/views/auth/routes.py:135
+msgid "მომხმარებელი ვერ მოიძებნა"
+msgstr "User not found"
+
+#: src/views/auth/routes.py:144
+msgid " პაროლი შეიქმნა წარმატებით"
+msgstr "Password was created successfully"
+
+#: src/views/main/routes.py:36
+msgid "Profile image updated successfully."
+msgstr "Profile image updated successfully."
+
+#: src/views/main/routes.py:55
+msgid "Profile photo deleted successfully."
+msgstr "Profile photo deleted successfully."
+
+#: src/views/products/routes.py:32
+#, fuzzy
+msgid "ახალი პროდუქტი დაემატა"
+msgstr "Product Description "
+
+#: src/views/products/routes.py:48
+msgid "პროდუქტი წარმატებით დარედაქტირდა"
+msgstr "The product has been edited successfully"
+
+#: src/views/products/routes.py:59
+#, fuzzy
+msgid "პროდუქტი წაიშალა"
+msgstr "Buy product"
+
+#: src/views/products/routes.py:67
+msgid "გილოცავთ თქვენ შეიძინეთ პროდუქტი"
+msgstr "Congratulations, you have purchased a product"
+
+
+
 

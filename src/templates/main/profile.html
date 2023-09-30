@@ -9,7 +9,7 @@
         <ul class=flashes>
         {% for  category, message in messages %}
             <li class="{{ category }}">
-                {{ message }}
+                {{ _(message) }}
             </li>
         {% endfor %}
         </ul>
@@ -36,17 +36,17 @@
             </div>
             <div class="col-md-8">
                 {% if current_user.is_authenticated %}
-                    <span> <strong>{{ "მოგესალმები" }} {{ current_user.username }}
-                        {{ "შენს მთავარ გვერდზე, აქ შეგიძლია ნახო შენი პირადი მონაცემები:" }}</strong></span>
+                    <span> <strong> {{ _("მოგესალმები") }} {{ current_user.username }}
+                        {{ _("შენს მთავარ გვერდზე, აქ შეგიძლია ნახო შენი პირადი მონაცემები:") }}</strong></span>
                     <hr>
-                    <span class="label"><strong>{{ "სახელი:" }}</strong>   {{ current_user.username }}
+                    <span class="label"><strong>{{ _("სახელი:") }}</strong>   {{ current_user.username }}
                         <i class="material-icons">&#xe8e8;</i> </span>
                     <hr>
-                    <span class="label"><strong>{{ "ელ-ფოსტა:" }}</strong>    {{ current_user.email }}</span>
+                    <span class="label"><strong>{{ _("ელ-ფოსტა:") }}</strong>    {{ current_user.email }}</span>
                     <hr>
-                    <span class="label"><strong>{{ "სქესი:" }}</strong>    {{ current_user.gender }}</span>
+                    <span class="label"><strong>{{ _("სქესი:") }}</strong>    {{ current_user.gender }}</span>
                     <hr>
-                    <span class="label"><strong>{{ "დაბადების თარიღი:" }}</strong>  {{ current_user.birthday }}</span>
+                    <span class="label"><strong>{{ _("დაბადების თარიღი:") }}</strong>  {{ current_user.birthday }}</span>
                 {% endif %}
             </div>
         </div>
@@ -58,12 +58,13 @@
                         onchange="readURL(this);" accept="image/*">
                     <img src="#" id="uploaded-image" alt="Uploaded Image Preview" style="display: none;">
                 </div>
-                <button class="btn btn-outline-secondary" type="submit">სურათის ატვირთვა</button>
+                <button class="btn btn-outline-secondary" type="submit">{{ _("სურათის ატვირთვა") }}</button>
             </div>
         </form>
  {% if current_user.profile_photo %}
             <div class="mt-4">
-                <a href="{{ url_for('main.delete_profile_photo', id=current_user.id) }}" class="btn btn-danger">Delete Profile Photo</a>
+                <a href="{{ url_for('main.delete_profile_photo', id=current_user.id) }}"
+                   class="btn btn-danger">{{ _("პროფილის ფოტოს წაშლა") }}</a>
             </div>
         {% endif %}
     </div>

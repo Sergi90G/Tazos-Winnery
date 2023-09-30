@@ -10,7 +10,7 @@
         <ul class=flashes>
         {% for  category, message in messages %}
             <li class="{{ category }}">
-                {{ message }}
+                {{ _(message) }}
             </li>
         {% endfor %}
         </ul>
@@ -19,14 +19,14 @@
 
     <div class="container mt-4 bg-light rounded-3 shadow custom2-background">
     <div class="row">
-          <h1>პროდუქტის შეძენა</h1>
+          <h1>{{ _("პროდუქტის შეძენა") }}</h1>
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">სახელი</th>
-                <th scope="col">აღწერა</th>
-                <th scope="col">ფასი</th>
-                <th scope="col">ჩამოსხმის წელი</th>
+                <th scope="col">{{ _("სახელი") }}</th>
+                <th scope="col">{{ _("აღწერა") }}</th>
+                <th scope="col">{{ _("ფასი") }}</th>
+                <th scope="col">{{ _("ჩამოსხმის წელი") }}</th>
             </tr>
             </thead>
 
@@ -40,10 +40,10 @@
             </tr>
             </tbody>
         </table>
-         <div><a href="{{ url_for('products.all_products') }}" class="btn btn-primary">Back to Products</a>
+         <div><a href="{{ url_for('products.all_products') }}" class="btn btn-primary">{{ _("Back to Products") }}</a>
         </div>
     </div>
-    <h1>გადახდის მეთოდები:</h1>
+    <h1>{{ _("გადახდის მეთოდები:") }}</h1>
     <i class='fab fa-apple-pay' style='font-size:48px;color:red'></i>
     <i class='fab fa-cc-mastercard' style='font-size:48px;color:red'></i>
     <i class='fab fa-cc-visa' style='font-size:48px;color:red'></i>
