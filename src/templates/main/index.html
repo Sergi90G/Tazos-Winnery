@@ -1,38 +1,38 @@
 {% extends "layout/base.html" %}
 {% block title %}
- Home Page | Tazoswinery.ge
+    Home Page | Tazoswinery.ge
 {% endblock %}
 {% block body %}
     {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        <ul class=flashes>
-        {% for  category, message in messages %}
-            <li class="{{ category }}">
-                 {{ _(message) }}
-            </li>
-        {% endfor %}
-        </ul>
-    {% endif %}
-   {% endwith %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for  category, message in messages %}
+                    <li class="{{ category }}">
+                        {{ _(message) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 
     {% if current_user.is_authenticated %}
-   <span> {{ _("გამარჯობა") }}, {{current_user.username }} &#10084;</span>
+        <span> {{ _("გამარჯობა") }}, {{ current_user.username }} &#10084;</span>
     {% endif %}
 
-    <div   class="container mt-4 custom-background"> <h1 class="h1-center">
-    <span class="company-icon"><i class="fas fa-grapes"></i></span>
-    <span class="company-name">Tazo's Winery</span>
-</h1>
-<hr class="black-bar">
-<i><b><p class="welcometxt">{{ _("A family winery called Tazo's Winery was established in 2004,
+    <div class="container mt-4 custom-background"><h1 class="h1-center">
+        <span class="company-icon"><i class="fas fa-grapes"></i></span>
+        <span class="company-name">Tazo's Winery</span>
+    </h1>
+        <hr class="black-bar">
+        <i><b><p class="welcometxt">{{ _("A family winery called Tazo's Winery was established in 2004,
 Different products of all varieties. Family cellar for guests with wine
 Together we offer accommodation in a family hotel,
 as well as gastronomy and various cognitive activities.Our motto is wind
 not quantity.") }}</p></b></i>
-<hr class="black-bar">
+        <hr class="black-bar">
         <a href="{{ url_for('main.about') }}" class="btn btn-dark">{{ _("ვრცლად") }}</a>
-<hr class="black-bar">
-        <div class="carousel" >
+        <hr class="black-bar">
+        <div class="carousel">
             <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?ixlib=rb-4.
             0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ4fHx3aW5lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
                  alt="Image 1">
@@ -45,50 +45,77 @@ not quantity.") }}</p></b></i>
             <img src="https://images.unsplash.com/photo-1464638681273-0962e9b53566?ixlib=rb-4.
             0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fHdpbmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
                  alt="Image 4">
-       </div>
+        </div>
         <hr class="black-bar">
         <b>{{ _("Contact Us") }}</b>
         <hr class="black-bar">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16732.72586762519!2d42.26604198277017!3d42.
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16732.72586762519!2d42.26604198277017!3d42.
 151228752779964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405cffa9dadd8d03%3A0x1c8c218b5785675d!2sTazo&#39;
 s%20Marani!5e0!3m2!1ska!2sge!4v1690825957562!5m2!1ska!2sge" width="900" height="350" style="border:0;"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <hr class="black-bar">
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <hr class="black-bar">
         <div class="diviko">
-     <div class="d-inline-block">
-    <b>{{ _("Contact") }}</b><br>
-    <a href="tel:+995-598-12-90-99" data-tracking-element-type="3"
-       jslog="56037; track:impression,click" itemprop="telephone" class="btn btn-dark">{{ _("Call now") }}</a><br>
-    <b>598-12-90-99</b>
-         </div>
+            <div class="d-inline-block">
+                <b>{{ _("Contact") }}</b><br>
+                <a href="tel:+995-598-12-90-99" data-tracking-element-type="3"
+                   jslog="56037; track:impression,click" itemprop="telephone"
+                   class="btn btn-dark">{{ _("Call now") }}</a><br>
+                <b>598-12-90-99</b>
+            </div>
 
-         <div class="d-inline-block" >
-        <b>{{ _("Address") }}</b><br>
-    <a class="btn btn-dark"
-       href="https://www.google.com/maps/dir//Tazo%27s+Marani/
+            <div class="d-inline-block">
+                <b>{{ _("Address") }}</b><br>
+                <a class="btn btn-dark"
+                   href="https://www.google.com/maps/dir//Tazo%27s+Marani/
        data=!4m8!4m7!1m0!1m5!1m1!1s0x405cffa9dadd8d03:0x1c8c218b5785675d!2m2!1d42.281692899999996!2d42.1490904"
-       target="_blank" data-tracking-element-type="6" jslog="56039; track:impression,click" >{{ _("Get directions") }}</a>
-        <div>{{ _("მე-7 ქუჩა") }}</div>
-            <div>{{ _("პირველი მაისი 0210") }}</div>
+                   target="_blank" data-tracking-element-type="6"
+                   jslog="56039; track:impression,click">{{ _("Get directions") }}</a>
+                <div>{{ _("მე-7 ქუჩა") }}</div>
+                <div>{{ _("პირველი მაისი 0210") }}</div>
                 <div>{{ _("საქართველო") }}</div>
-             </div>
+            </div>
 
-          <div class="d-inline-block">
-    <b>{{ _("Business Hours") }}</b>
-        <div class="d-inline-block"><table itemprop="openingHours"><tbody><tr>
-            <th>{{ _("ორშ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr>
-        <tr><th>{{ _("სამ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr><tr>
-            <th>{{ _("ოთხ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr><tr>
-            <th>{{ _("ხუთ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr><tr>
-            <th>{{ _("პარ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr><tr>
-            <th>{{ _("შაბ:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr><tr>
-            <th>{{ _("კვი:") }}</th><td><span>9:00 AM – 10:00 PM</span></td></tr>
-        </tbody></table></div>
-              </div>
+            <div class="d-inline-block">
+                <b>{{ _("Business Hours") }}</b>
+                <div class="d-inline-block">
+                    <table itemprop="openingHours">
+                        <tbody>
+                        <tr>
+                            <th>{{ _("ორშ:") }}</th>
+                            <td><span>9:00 AM – 10:00 PM</span></td>
+                        </tr>
+                        <tr>
+                            <th>{{ _("სამ:") }}</th>
+                            <td><span>9:00 AM – 10:00 PM</span></td>
+                        </tr>
+                        <tr>
+                            <th>{{ _("ოთხ:") }}</th>
+                            <td><span>9:00 AM – 10:00 PM</span></td>
+                        </tr>
+                        <tr>
+                            <th>{{ _("ხუთ:") }}</th>
+                            <td><span>9:00 AM – 10:00 PM</span></td>
+                        </tr>
+                        <tr>
+                            <th>{{ _("პარ:") }}</th>
+                            <td><span>9:00 AM – 10:00 PM</span></td>
+                        </tr>
+                        <tr>
+                            <th>{{ _("შაბ:") }}</th>
+                            <td><span>9:00 AM – 10:00 PM</span></td>
+                        </tr>
+                        <tr>
+                            <th>{{ _("კვი:") }}</th>
+                            <td><span>9:00 AM – 10:00 PM</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-     </div>
 
-     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}
 
 

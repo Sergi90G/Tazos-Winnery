@@ -8,41 +8,41 @@ body {
     background-image: url('https://img.freepik.com/premium-photo/old-wooden-beer-barrel-dark-background_96140-102.jpg?w=826');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover; /* Use 'cover' to ensure the image covers the entire viewport */
-    margin: 0; /* Reset default body margin */
-    padding: 0; /* Reset default body padding */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
 }
+
 .black-bar {
-        background-color: black;
-        height: 4px; /* Adjust the height of the bar as needed */
-        margin: 20px 0; /* Adjust the margin to control the spacing between divs */
-    }
+    background-color: black;
+    height: 4px;
+    margin: 20px 0;
+}
 
 .custom-background {
-            background-image: url('https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'); /* Replace 'your-image-url.jpg' with the actual path to your image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 20px; /* Add padding to the container for better visibility of content */
-        }
-.custom2-background  {
-            background-image: url('https://media.istockphoto.com/id/1419117748/photo/old-wall-texture-cement-dirty-gray-with-black-background-abstract-grey-and-silver-color.webp?b=1&s=170667a&w=0&k=20&c=KI-m7WiMl2YDY5nSyAxxsta5ZPwjY1x6WwSCRdZq-VA='); /* Replace 'your-image-url.jpg' with the actual path to your image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 20px; /* Add padding to the container for better visibility of content */
-        }
+    background-image: url('https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'); /* Replace 'your-image-url.jpg' with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px; /* Add padding to the container for better visibility of content */
+}
+
+.custom2-background {
+    background-image: url('https://media.istockphoto.com/id/1419117748/photo/old-wall-texture-cement-dirty-gray-with-black-background-abstract-grey-and-silver-color.webp?b=1&s=170667a&w=0&k=20&c=KI-m7WiMl2YDY5nSyAxxsta5ZPwjY1x6WwSCRdZq-VA='); /* Replace 'your-image-url.jpg' with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+
 .custom3-background {
     background-image: url("https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 20px;
-    opacity: 0.6; /* Adjust this value to make the entire element semi-transparent */
+    opacity: 0.9;
 }
-
-
-
 
 
 /* Flex container for contact sections */
@@ -59,7 +59,7 @@ body {
     flex: 1;
     text-align: center;
     padding: 20px;
-    max-width: 300px; /* Added max-width to limit width */
+    max-width: 300px;
 }
 
 
@@ -127,29 +127,33 @@ body > div.container.mt-3 > div > b {
     color: #b2b2b2;
 
 }
+
 .h1-center {
-  text-align: center;
+    text-align: center;
     font-style: italic;
 }
+
 .company-name {
-        font-family: 'YourCustomFont', sans-serif; /* Replace 'YourCustomFont' with your chosen font family */
-        text-transform: uppercase; /* Converts text to uppercase */
-        font-size: 50px; /* Adjust font size as needed */
-        letter-spacing: 3px; /* Adjust letter spacing as needed */
-        color: #ffd500; /* Change the text color to your preference */
-        font-weight: bold;
-    }
+    font-family: 'YourCustomFont', sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    letter-spacing: 3px;
+    color: #ffd500;
+    font-weight: bold;
+}
+
 .company-icon {
-    font-size: 24px; /* Adjust the icon size as needed */
-    margin-right: 10px; /* Adjust the spacing between the icon and text as needed */
-    color: #ffd500; /* Change the icon color to your preference */
+    font-size: 24px;
+    margin-right: 10px;
+    color: #ffd500;
 }
 
 body > div.container.mt-3 > div {
     text-align: center;
     align-content: center;
-    align-items:center;
+    align-items: center;
 }
+
 .error {
     color: red;
     font-weight: bold;
@@ -159,136 +163,142 @@ body > div.container.mt-3 > div {
     color: green;
     font-weight: bold;
 }
+
 /* Custom CSS for square-shaped cards with beautiful images and next to each other */
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     justify-content: center;
     justify-items: center;
-     /* Adjust margin to compensate for spacing */
 }
 
 .square-card {
-    width: 250px; /* Set width for cards */
-    height: 150px; /* Set height for cards */
+    width: 250px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 5px; /* Adjust margin for spacing */
-    border: 1px solid #ccc; /* Optional border for cards */
+    margin: 5px;
+    border: 1px solid #ccc;
 }
 
 .square-card .card-img-wrapper {
-    width: 500px; /* Adjust image width as needed */
-    height: 200px; /* Adjust image height as needed */
-    margin-bottom: 0px; /* Optional margin for space between image and content */
+    width: 500px;
+    height: 200px;
+    margin-bottom: 0px;
 }
 
 .square-card img {
     width: 80px;
     height: 200px;
- /* Scale image while preserving aspect ratio */
 }
 
 .discount-badge {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: red;
-        color: white;
-        padding: 4px 8px;
-        font-weight: bold;
-    }
-
-
-
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 4px 8px;
+    font-weight: bold;
+}
 
 
 .main-block {
-      display: flex;
-      width: 90%;
-      padding: 10px 0;
-      border-radius: 5px;
-      box-shadow: 1px 1px 8px 0px #666;
-      background: #fff;
-      }
+    display: flex;
+    width: 90%;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px 0px #666;
+    background: #fff;
+}
 
 
 .btn {
-      display: flex;
-      align-items: center;
-      box-shadow: 2px 2px 2px #666;
-      background: #e8e8e8;
-      color: #fff;
-      cursor: pointer;
-      }
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 2px #666;
+    background: #e8e8e8;
+    color: #fff;
+    cursor: pointer;
+}
+
 .btn:hover {
-      transform: scale(1.03);
-      }
+    transform: scale(1.03);
+}
+
 .btn span {
-      font-size: 16px;
-      }
+    font-size: 16px;
+}
+
 .facebook {
-      background: #3a589e;
-      }
+    background: #3a589e;
+}
+
 .twitter {
-      background: #429cd6;
-      }
-.google{
-      background: #d34836;
-      }
+    background: #429cd6;
+}
+
+.google {
+    background: #d34836;
+}
 
 .label {
     color: #121312;
-  }
+}
+
 .material-icons {
     color: #299129;
 }
 
 .info-text {
-    font-size: 20px; /* Adjust the font size as needed */
-    font-style: italic; /* Make the text italic */
-    color: #f5092c /* Set the text color to a muted color */
-  }
+    font-size: 20px;
+    font-style: italic;
+    color: #f5092c
+}
 
 .small-input {
-    width: 30px; /* Adjust the width as needed */
+    width: 30px;
 }
 
 .container h2 {
-        font-size: 16px; /* Adjust the font size as needed */
-    }
+    font-size: 16px;
+}
 
 .slanted-arrow-left::before {
-        content: "\2190"; /* Left arrow character */
-        transform: rotate(-45deg);
-        display: inline-block;
-        margin-right: 5px; /* Adjust spacing */
-    }
+    content: "\2190";
+    transform: rotate(-45deg);
+    display: inline-block;
+    margin-right: 5px;
+}
 
 .slanted-arrow-right::before {
-        content: "\2192"; /* Right arrow character */
-        transform: rotate(45deg);
-        display: inline-block;
-        margin-left: 5px; /* Adjust spacing */
-    }
+    content: "\2192";
+    transform: rotate(45deg);
+    display: inline-block;
+    margin-left: 5px;
+}
 
 .language-flags {
-    margin-right: 20px; /* Adjust the margin as needed */
+    margin-right: 20px;
 }
+
 body > div.container.mt-3 > div > h1 {
     font-size: 20px;
     color: black;
 }
+
 i {
     cursor: pointer;
 }
+
 img {
-    cursor:pointer;
+    cursor: pointer;
 }
+
 body > nav > a.navbar-brand > img {
     margin-left: 20px;
 }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-09-30 21:02+0400\n"
+"POT-Creation-Date: 2023-10-02 16:22+0400\n"
 "PO-Revision-Date: 2023-08-03 22:49+0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -23,8 +23,13 @@ msgid "Forgot Password?"
 msgstr "Forgot Password?"
 
 #: src/templates/auth/register.html:51
-msgid "რეგისტრაცია უკვე გაიარეთ?"
-msgstr "Have you registered yet?"
+msgid "უკვე დარეგისტრირდით?"
+msgstr "Already registered?"
+
+#: src/templates/auth/register.html:53
+#, fuzzy
+msgid "აქტივაციის ლინკის ხელახლა გაგზავნა"
+msgstr "Resend the activation link"
 
 #: src/templates/layout/navbar.html:17
 msgid "Home"
@@ -125,52 +130,52 @@ msgstr ""
 msgid "ონლაინ პროდუქტის შესაძენად საჭიროა გაიაროთ ავტორიზაცია"
 msgstr "To buy a product online you need to be authenticated  "
 
-#: src/templates/main/about.html:42
+#: src/templates/main/about.html:43
 msgid "დააჭირე აქ"
 msgstr "Click here"
 
-#: src/templates/main/about.html:47
+#: src/templates/main/about.html:48
 msgid "რას გთავაზობთ?"
 msgstr "What do you offer?"
 
-#: src/templates/main/about.html:52
+#: src/templates/main/about.html:54
 msgid "მომსახურება"
 msgstr "Service"
 
-#: src/templates/main/about.html:54
+#: src/templates/main/about.html:56
 msgid "საოჯახო სასტუმრო"
 msgstr "Family hotel"
 
-#: src/templates/main/about.html:55
+#: src/templates/main/about.html:57
 msgid "გასტროტურიზმი"
 msgstr "Gastrotourism"
 
-#: src/templates/main/about.html:56
+#: src/templates/main/about.html:58
 msgid "შემეცნებითი აქტივობები"
 msgstr "Cognitive activities"
 
-#: src/templates/main/about.html:57
+#: src/templates/main/about.html:59
 msgid "დეგუსტაცია"
 msgstr "Tasting"
 
-#: src/templates/main/about.html:61
+#: src/templates/main/about.html:63
 #, fuzzy
-msgid "Product"
-msgstr "Product"
+msgid "პროდუქტი"
+msgstr "product"
 
-#: src/templates/main/about.html:63 src/templates/products/products.html:23
+#: src/templates/main/about.html:65 src/templates/products/products.html:23
 msgid "ღვინო"
 msgstr "Wine"
 
-#: src/templates/main/about.html:64
+#: src/templates/main/about.html:66
 msgid "ღვინის ტკბილისგან დამზადებული ტკბილეული"
 msgstr "Sweets made from wine sweet"
 
-#: src/templates/main/about.html:65
+#: src/templates/main/about.html:67
 msgid "სხვა ალკოჰოლური სასმელები"
 msgstr "Other alcoholic beverages"
 
-#: src/templates/main/about.html:66
+#: src/templates/main/about.html:68
 msgid "ტრადიციული სამზარეულო"
 msgstr "Traditional cuisine"
 
@@ -204,59 +209,59 @@ msgstr "Contact Us"
 msgid "Contact"
 msgstr "Contact"
 
-#: src/templates/main/index.html:61
+#: src/templates/main/index.html:62
 msgid "Call now"
 msgstr "Call now"
 
-#: src/templates/main/index.html:66
+#: src/templates/main/index.html:67
 msgid "Address"
 msgstr "Address"
 
-#: src/templates/main/index.html:70
+#: src/templates/main/index.html:72
 msgid "Get directions"
 msgstr "Get directions"
 
-#: src/templates/main/index.html:71
+#: src/templates/main/index.html:73
 msgid "მე-7 ქუჩა"
 msgstr "7th street"
 
-#: src/templates/main/index.html:72
+#: src/templates/main/index.html:74
 msgid "პირველი მაისი 0210"
 msgstr "Pirveli Maisi 0210"
 
-#: src/templates/main/index.html:73
+#: src/templates/main/index.html:75
 msgid "საქართველო"
 msgstr "Georgia"
 
-#: src/templates/main/index.html:77
+#: src/templates/main/index.html:79
 msgid "Business Hours"
 msgstr "Business Hours"
 
-#: src/templates/main/index.html:79
+#: src/templates/main/index.html:84
 msgid "ორშ:"
 msgstr "Mon:"
 
-#: src/templates/main/index.html:80
+#: src/templates/main/index.html:88
 msgid "სამ:"
 msgstr "Thue:"
 
-#: src/templates/main/index.html:81
+#: src/templates/main/index.html:92
 msgid "ოთხ:"
 msgstr "Wed:"
 
-#: src/templates/main/index.html:82
+#: src/templates/main/index.html:96
 msgid "ხუთ:"
 msgstr "Thu:"
 
-#: src/templates/main/index.html:83
+#: src/templates/main/index.html:100
 msgid "პარ:"
 msgstr "Fri:"
 
-#: src/templates/main/index.html:84
+#: src/templates/main/index.html:104
 msgid "შაბ:"
 msgstr "Sat:"
 
-#: src/templates/main/index.html:85
+#: src/templates/main/index.html:108
 msgid "კვი:"
 msgstr "Sun:"
 
@@ -269,6 +274,7 @@ msgid "შენს მთავარ გვერდზე, აქ შეგ�
 msgstr "to your main page, here you can see your information"
 
 #: src/templates/main/profile.html:42
+#, fuzzy
 msgid "სახელი:"
 msgstr "Name:"
 
@@ -330,28 +336,28 @@ msgstr "Method of payment"
 msgid "ლარი"
 msgstr "Gel"
 
-#: src/templates/products/products.html:37
+#: src/templates/products/products.html:38
 msgid "Details"
 msgstr "Details"
 
-#: src/templates/products/products.html:40
+#: src/templates/products/products.html:42
 msgid "Edit"
 msgstr "Edit"
 
-#: src/templates/products/products.html:41
+#: src/templates/products/products.html:44
 msgid "Delete"
 msgstr "Delete"
 
-#: src/templates/products/products.html:42
+#: src/templates/products/products.html:46
 #, fuzzy
 msgid "Add"
 msgstr "Add"
 
-#: src/templates/products/products.html:44
+#: src/templates/products/products.html:49
 msgid "Buy"
 msgstr "Buy"
 
-#: src/templates/products/products.html:45
+#: src/templates/products/products.html:51
 msgid "add to cart"
 msgstr "add to cart"
 
@@ -363,19 +369,19 @@ msgstr "Product Description "
 msgid "კატეგორია"
 msgstr "Category"
 
-#: src/views/auth/forms.py:81
+#: src/views/auth/forms.py:85
 msgid "პაროლი უნდა შეიცავდეს დიდ ასოებს"
 msgstr "Password must contain uppercase letters"
 
-#: src/views/auth/forms.py:83
+#: src/views/auth/forms.py:87
 msgid "პაროლი უნდა შეიცავდეს პატარა ასოებს"
 msgstr "Password must contain lowercase letters"
 
-#: src/views/auth/forms.py:85
+#: src/views/auth/forms.py:89
 msgid "პაროლი უნდა შეიცავდეს ციფრებს"
 msgstr "Password must contain numbers"
 
-#: src/views/auth/forms.py:87
+#: src/views/auth/forms.py:91
 msgid "პაროლი უნდა შეიცავდეს სიმბოლოებს"
 msgstr "Password must contain characters"
 
@@ -400,7 +406,7 @@ msgid "ეს მომხმარებელი ვერ მოიძებ�
 msgstr "This user could not be found"
 
 #: src/views/auth/routes.py:80
-msgid "მეილი არ დადასტურდა"
+msgid "ელ-ფოსტა არ დადასტურდა"
 msgstr "Email not verified"
 
 #: src/views/auth/routes.py:84
@@ -442,7 +448,7 @@ msgstr "Profile photo deleted successfully."
 #: src/views/products/routes.py:32
 #, fuzzy
 msgid "ახალი პროდუქტი დაემატა"
-msgstr "Product Description "
+msgstr "Added new product "
 
 #: src/views/products/routes.py:48
 msgid "პროდუქტი წარმატებით დარედაქტირდა"
@@ -451,12 +457,9 @@ msgstr "The product has been edited successfully"
 #: src/views/products/routes.py:59
 #, fuzzy
 msgid "პროდუქტი წაიშალა"
-msgstr "Buy product"
+msgstr "Product deleted"
 
 #: src/views/products/routes.py:67
 msgid "გილოცავთ თქვენ შეიძინეთ პროდუქტი"
 msgstr "Congratulations, you have purchased a product"
-
-
-
 

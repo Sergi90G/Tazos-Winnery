@@ -1,24 +1,24 @@
 {% extends "layout/base.html" %}
 {% block title %}
- About Page | Tazoswinery.ge
+    About Page | Tazoswinery.ge
 {% endblock %}
-{% block body%}
- {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        <ul class=flashes>
-        {% for  category, message in messages %}
-            <li class="{{ category }}">
-                {{ _(message) }}
-            </li>
-        {% endfor %}
-        </ul>
-    {% endif %}
-   {% endwith %}
+{% block body %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for  category, message in messages %}
+                    <li class="{{ category }}">
+                        {{ _(message) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 
 
 
-    <div class="container mt-4 bg-light rounded-3 shadow custom2-background"> <h3>{{ _("ჩვენს შესახებ") }}</h3>
-<i><b><p>{{ _("საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,
+    <div class="container mt-4 bg-light rounded-3 shadow custom2-background"><h3>{{ _("ჩვენს შესახებ") }}</h3>
+        <i><b><p>{{ _("საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,
     ქართული ვაზის ჯიშებისგან ტრადიციული მეთოდებით დაყენებული ღვინო წარმოადგენს ჩვენს პროდუქტს.
     ჩვენთვის პირველ რიგში მნიშვნელოვანია ხარისხი და არა რაოდენობა. საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს
     განთავსებას, შემეცნებით აქტივობებს და გასტრონომიას. ჩვენი მისამართია აბაშის რაიონი სოფელი მარანი მე-7 ქუჩა ბინა  №18,
@@ -33,40 +33,42 @@
     ნატურალური ღვინოები.
     'თაზოს მარან'-ის  საოჯახო სასტუმროს გააჩნია ოთხი ორკაციანი ნომერი, ყველა საჭირო ივენტარით და პირობებით, ასევე ტერასა საიდანაც
     იშლება ლამაზი ხედები.") }}
-     </p></b></i>
-<hr>
-</div>
-{% if not current_user.is_authenticated %}
-<div class="container mt-4 bg-light rounded-3 shadow custom2-background">
-        <strong><h1 class="info-text">{{ _("ონლაინ პროდუქტის შესაძენად საჭიროა გაიაროთ ავტორიზაცია") }}</h1></strong>
-     <a href="{{ url_for('auth.register') }}" class="btn btn-warning">{{ _("დააჭირე აქ") }}</a>
-    <hr>
-</div>
-{% endif %}
-    <div class="container mt-4 bg-light rounded-3 shadow custom2-background">
-    <strong><h1><span class="slanted-arrow-left"></span>{{ _("რას გთავაზობთ?") }} <span class="slanted-arrow-right"></span></h1></strong>
-<hr class="black-bar">
-
-    <div class="row" id="transp-background">
-        <div class="col border-end border-4 ">
-            <h1>{{ _("მომსახურება") }}</h1>
-            <ul>
-                <li><h2>{{ _("საოჯახო სასტუმრო") }}</h2></li>
-                <li><h2>{{ _("გასტროტურიზმი") }}</h2></li>
-                <li><h2>{{ _("შემეცნებითი აქტივობები") }}</h2></li>
-                <li><h2>{{ _("დეგუსტაცია") }}</h2></li>
-            </ul>
+        </p></b></i>
+        <hr>
+    </div>
+    {% if not current_user.is_authenticated %}
+        <div class="container mt-4 bg-light rounded-3 shadow custom2-background">
+            <strong><h1 class="info-text">{{ _("ონლაინ პროდუქტის შესაძენად საჭიროა გაიაროთ ავტორიზაცია") }}</h1>
+            </strong>
+            <a href="{{ url_for('auth.register') }}" class="btn btn-warning">{{ _("დააჭირე აქ") }}</a>
+            <hr>
         </div>
-        <div class="col">
-            <h1>{{ _("Product") }}</h1>
-            <ul>
-                <li><h2><a href="/products">{{ _("ღვინო") }}</a></h2></li>
-                <li><h2>{{ _("ღვინის ტკბილისგან დამზადებული ტკბილეული") }}</h2></li>
-                <li><h2>{{ _("სხვა ალკოჰოლური სასმელები") }}</h2></li>
-                <li><h2>{{ _("ტრადიციული სამზარეულო") }}</h2></li>
-            </ul>
+    {% endif %}
+    <div class="container mt-4 bg-light rounded-3 shadow custom2-background">
+        <strong><h1><span class="slanted-arrow-left"></span>{{ _("რას გთავაზობთ?") }} <span
+                class="slanted-arrow-right"></span></h1></strong>
+        <hr class="black-bar">
+
+        <div class="row" id="transp-background">
+            <div class="col border-end border-4 ">
+                <h1>{{ _("მომსახურება") }}</h1>
+                <ul>
+                    <li><h2>{{ _("საოჯახო სასტუმრო") }}</h2></li>
+                    <li><h2>{{ _("გასტროტურიზმი") }}</h2></li>
+                    <li><h2>{{ _("შემეცნებითი აქტივობები") }}</h2></li>
+                    <li><h2>{{ _("დეგუსტაცია") }}</h2></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h1>{{ _("პროდუქტი") }}</h1>
+                <ul>
+                    <li><h2><a href="/products">{{ _("ღვინო") }}</a></h2></li>
+                    <li><h2>{{ _("ღვინის ტკბილისგან დამზადებული ტკბილეული") }}</h2></li>
+                    <li><h2>{{ _("სხვა ალკოჰოლური სასმელები") }}</h2></li>
+                    <li><h2>{{ _("ტრადიციული სამზარეულო") }}</h2></li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-<hr>
+    <hr>
 {% endblock %}

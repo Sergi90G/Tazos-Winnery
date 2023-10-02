@@ -4,6 +4,7 @@ from wtforms.validators import DataRequired, equal_to, length, ValidationError
 from string import ascii_uppercase, ascii_lowercase, digits, punctuation
 from src.models import User
 from flask_babel import _
+from flask import flash
 
 class LoginForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()], render_kw={"placeholder": "შეიყვანეთ სახელი"})
@@ -22,10 +23,10 @@ class ResendKeyForm(FlaskForm):
     def validate_email(self, field):
         user = User.query.filter_by(email=field.data).first()
         if not user:
-            raise ValidationError("აღნიშნული ელფოსტით მომხმარებელი არ იძებნება", "error")
+            flash("აღნიშნული ელფოსტით მომხმარებელი არ იძებნება", "error")
 
         if user.confirmed:
-            raise ValidationError("მომხმარებელი გააქტიურებულია", "success")
+            flash("მომხმარებელი გააქტიურებულია", "success")
 
 
 
@@ -47,16 +48,19 @@ class RegisterForm(FlaskForm):
     gender = RadioField("აირჩიეთ სქესი", choices=["მამრობითი","მდედრობითი"], validators=[(DataRequired())])
     birthday = DateField("დაბადების თარიღი",validators=[(DataRequired())])
     email = EmailField("ელ-ფოსტა", render_kw={"placeholder": "შეიყვანეთ ელ-ფოსტა"})
-    repeat_password = PasswordField("გაიმეორეთ პაროლი *",
-                                    validators=[DataRequired(), equal_to("password", message="პაროელები არ ემთხვევა")],
-                                    render_kw={"placeholder": "გაიმეორეთ პაროლი"})
+    repeat_password = PasswordField("გაიმეორეთ პაროლი *", validators=[DataRequired()],render_kw={"placeholder": "გაიმეორეთ პაროლი"})
 
     submit = SubmitField("რეგისტრაცია")
+
+    def validate_repeat_password(self, field):
+        if field.data != self.password.data:
+            flash("პაროლები არ ემთხვევა", "error")
+
 
     def validate_username(self, field):
         existing_user = User.query.filter_by(username=field.data).first()
         if existing_user:
-            raise ValidationError("ეს სახელი გამოყენებულია", "error")
+             flash("ეს სახელი გამოყენებულია", "error")
 
     def validate_password(self, field):
         for character in field.data:
@@ -78,10 +82,10 @@ class RegisterForm(FlaskForm):
                     contains_symbols = True
 
             if not contains_uppercase:
-                raise ValidationError(_("პაროლი უნდა შეიცავდეს დიდ ასოებს"), "error")
+                 flash(_('პაროლი უნდა შეიცავდეს დიდ ასოებს'), 'error')
             elif not contains_lowercase:
-                raise ValidationError(_("პაროლი უნდა შეიცავდეს პატარა ასოებს"), "error")
+                 flash(_('პაროლი უნდა შეიცავდეს პატარა ასოებს'), 'error')
             elif not contains_digits:
-                raise ValidationError(_("პაროლი უნდა შეიცავდეს ციფრებს"), "error")
+                 flash(_('პაროლი უნდა შეიცავდეს ციფრებს'), 'error')
             elif not contains_symbols:
-                raise ValidationError(_("პაროლი უნდა შეიცავდეს სიმბოლოებს"), "error")
+                 flash(_('პაროლი უნდა შეიცავდეს სიმბოლოებს'), 'error')

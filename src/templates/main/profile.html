@@ -1,19 +1,19 @@
 {% extends "layout/base.html" %}
 {% block title %}
- User Profile | Tazoswinery.ge
+    User Profile | Tazoswinery.ge
 {% endblock %}
 
 {% block body %}
     {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        <ul class=flashes>
-        {% for  category, message in messages %}
-            <li class="{{ category }}">
-                {{ _(message) }}
-            </li>
-        {% endfor %}
-        </ul>
-    {% endif %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for  category, message in messages %}
+                    <li class="{{ category }}">
+                        {{ _(message) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     {% endwith %}
 
     <div class="container mt-4 bg-light rounded-3 shadow custom2-background">
@@ -23,14 +23,14 @@
                     {% if current_user.is_authenticated %}
                         {% if current_user.profile_photo %}
                             <img src="{{ current_user.profile_photo }}" alt="Profile Image" class="img-thumbnail"
-                                style="width: 200px; height: 200px;">
+                                 style="width: 200px; height: 200px;">
                         {% else %}
                             <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Profile image"
-                                class="img-thumbnail" style="width: 200px; height: 200px;">
+                                 class="img-thumbnail" style="width: 200px; height: 200px;">
                         {% endif %}
                     {% else %}
                         <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="Profile image"
-                            class="img-thumbnail" style="width: 200px; height: 200px;">
+                             class="img-thumbnail" style="width: 200px; height: 200px;">
                     {% endif %}
                 </div>
             </div>
@@ -42,11 +42,11 @@
                     <span class="label"><strong>{{ _("სახელი:") }}</strong>   {{ current_user.username }}
                         <i class="material-icons">&#xe8e8;</i> </span>
                     <hr>
-                    <span class="label"><strong>{{ _("ელ-ფოსტა:") }}</strong>    {{ current_user.email }}</span>
+                    <span class="label"><strong>{{ _("ელ-ფოსტა:") }}</strong> {{ current_user.email }}</span>
                     <hr>
-                    <span class="label"><strong>{{ _("სქესი:") }}</strong>    {{ current_user.gender }}</span>
+                    <span class="label"><strong>{{ _("სქესი:") }}</strong> {{ current_user.gender }}</span>
                     <hr>
-                    <span class="label"><strong>{{ _("დაბადების თარიღი:") }}</strong>  {{ current_user.birthday }}</span>
+                    <span class="label"><strong>{{ _("დაბადების თარიღი:") }}</strong> {{ current_user.birthday }}</span>
                 {% endif %}
             </div>
         </div>
@@ -55,13 +55,13 @@
             <div class="file-upload account_info_upload_image mt-4">
                 <div class="image-upload-wrap">
                     <input class="file-upload-input" type="file" name="profile_image" id="profile_image"
-                        onchange="readURL(this);" accept="image/*">
+                           onchange="readURL(this);" accept="image/*">
                     <img src="#" id="uploaded-image" alt="Uploaded Image Preview" style="display: none;">
                 </div>
                 <button class="btn btn-outline-secondary" type="submit">{{ _("სურათის ატვირთვა") }}</button>
             </div>
         </form>
- {% if current_user.profile_photo %}
+        {% if current_user.profile_photo %}
             <div class="mt-4">
                 <a href="{{ url_for('main.delete_profile_photo', id=current_user.id) }}"
                    class="btn btn-danger">{{ _("პროფილის ფოტოს წაშლა") }}</a>

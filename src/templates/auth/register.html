@@ -48,7 +48,9 @@
 
         <div class="custom2-background p-3 rounded-5 mb-4 shadow">
             {{ form.submit(class="btn btn-success" ) }}
-            <a href="{{ url_for('auth.login') }}">{{ _("რეგისტრაცია უკვე გაიარეთ?") }}</a>
+            <a href="{{ url_for('auth.login') }}">{{ _("უკვე დარეგისტრირდით?") }}</a>
+            <hr>
+             <a href="{{ url_for('auth.resend_key') }}">{{ _("აქტივაციის ლინკის ხელახლა გაგზავნა") }}</a>
         </div>
         <div class="custom2-background p-4 rounded-5 mb-4 shadow">
          <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">

@@ -58,7 +58,7 @@ def confirm_email(activation_key):
 
     user = User.query.filter_by(email=email).first()
     if user.confirmed:
-        flash(_('* მომხმარებელი უკვე გააქტიურებულია'),'error')
+        flash(_('* მომხმარებელი უკვე გააქტიურებულია'), 'error')
         return redirect(url_for("auth.login"))
 
     user.confirmed = True
@@ -77,7 +77,7 @@ def login():
             return redirect(url_for("auth.login"))
 
         if not user.confirmed:
-            flash(_('მეილი არ დადასტურდა'),'error')
+            flash(_('ელ-ფოსტა არ დადასტურდა'), 'error')
             return redirect(url_for("auth.login"))
 
         if user.check_password(form.password.data):
@@ -89,7 +89,7 @@ def login():
             else:
                 return redirect(url_for("main.index"))
         else:
-            flash(_('პაროლი არასწორია'),'error')
+            flash(_('პაროლი არასწორია'), 'error')
 
 
 
