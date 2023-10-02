@@ -38,6 +38,39 @@ class ResetPasswordForm(FlaskForm):
                                          render_kw={"placeholder": "გაიმეორეთ ახალი პაროლი"})
     submit = SubmitField("პაროლის შეცვლა")
 
+    def validate_repeat_password(self, field):
+        if field.data != self.password.data:
+            flash("პაროლები არ ემთხვევა", "error")
+
+    def validate_password(self, field):
+        for character in field.data:
+            contains_uppercase = character in ascii_uppercase
+            contains_lowercase = character in ascii_lowercase
+            contains_digits = character in digits
+            contains_symbols = character in punctuation
+            for character in field.data:
+                if character in ascii_uppercase:
+                    contains_uppercase = True
+
+                if character in ascii_lowercase:
+                    contains_lowercase = True
+
+                if character in digits:
+                    contains_digits = True
+
+                if character in punctuation:
+                    contains_symbols = True
+
+            if not contains_uppercase:
+                flash(_('პაროლი უნდა შეიცავდეს დიდ ასოებს'), 'error')
+            elif not contains_lowercase:
+                flash(_('პაროლი უნდა შეიცავდეს პატარა ასოებს'), 'error')
+            elif not contains_digits:
+                flash(_('პაროლი უნდა შეიცავდეს ციფრებს'), 'error')
+            elif not contains_symbols:
+                flash(_('პაროლი უნდა შეიცავდეს სიმბოლოებს'), 'error')
+
+
 
 class RegisterForm(FlaskForm):
 

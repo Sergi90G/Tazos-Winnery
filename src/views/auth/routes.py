@@ -1,14 +1,18 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
 from os import path
+
+from src import db
 from src.config import Config
 from src.views.auth.forms import RegisterForm, LoginForm, ResendKeyForm, ResetPasswordForm, ForResetPasswordForm
 from src.models import User
 from flask_login import login_user, logout_user
 from src.utils import send_email, create_key, confirm_key, confirm_password_reset_key, create_password_reset_key
 from flask_babel import _
+from werkzeug.security import generate_password_hash
 
 TEMPLATES_FOLDER = path.join(Config.BASE_DIRECTORY, "templates", "auth")
-auth_blueprint = Blueprint("auth",__name__,template_folder=TEMPLATES_FOLDER)
+auth_blueprint = Blueprint("auth", __name__, template_folder=TEMPLATES_FOLDER)
+
 
 @auth_blueprint.route("/register", methods=["GET", "POST"])
 def register():
@@ -31,6 +35,7 @@ def register():
                 flash(error)
     return render_template("register.html", form=form)
 
+
 @auth_blueprint.route("/resend_key", methods=["GET", "POST"])
 def resend_key():
     form = ResendKeyForm()
@@ -49,6 +54,7 @@ def resend_key():
 
     return render_template("resend_key.html", form=form)
 
+
 @auth_blueprint.route("/confirm_email/<activation_key>")
 def confirm_email(activation_key):
     email = confirm_key(activation_key)
@@ -65,6 +71,7 @@ def confirm_email(activation_key):
     user.save()
     login_user(user)
     return redirect(url_for("main.index"))
+
 
 @auth_blueprint.route("/login", methods=["GET", "POST"])
 def login():
@@ -91,10 +98,8 @@ def login():
         else:
             flash(_('პაროლი არასწორია'), 'error')
 
+    return render_template("login.html", form=form)
 
-
-
-    return render_template("login.html",  form=form)
 
 @auth_blueprint.route("/logout")
 def logout():
@@ -119,7 +124,6 @@ def for_reset_password():
             for error in errors:
                 flash(error)
 
-
     return render_template("for_reset_password.html", form=form)
 
 
@@ -137,21 +141,12 @@ def reset_password(reset_key):
 
     form = ResetPasswordForm()
     if form.validate_on_submit():
-        user.new_password = form.new_password.data
-        user.confirm_new_password = form.confirm_new_password.data
-        user.save()
-        login_user(user)
-        flash(_(' პაროლი შეიქმნა წარმატებით'), 'success')
-        return redirect(url_for("main.index", form=form, reset_key=reset_key))
+        # Update the user's password in the database
+      user.password = form.new_password.data
+      db.session.commit()
+
+      login_user(user)
+      flash(_('პაროლი შეიქმნა წარმატებით'), 'success')
+      return redirect(url_for("main.index", form=form, reset_key=reset_key))
 
     return render_template("reset_password.html", form=form)
-
-
-
-
-
-
-
-
-
-
