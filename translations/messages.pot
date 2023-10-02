@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-10-02 16:22+0400\n"
+"POT-Creation-Date: 2023-10-02 23:51+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,81 +72,103 @@ msgstr ""
 #: src/templates/main/about.html:21
 msgid ""
 "საოჯახო მეღვინეობა სახელწოდებით Tazo's Winnery შეიქმნა 2004 წელს,\n"
-"    ქართული ვაზის ჯიშებისგან ტრადიციული მეთოდებით დაყენებული ღვინო "
-"წარმოადგენს ჩვენს პროდუქტს.\n"
-"    ჩვენთვის პირველ რიგში მნიშვნელოვანია ხარისხი და არა რაოდენობა. "
-"საოჯახო მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს\n"
-"    განთავსებას, შემეცნებით აქტივობებს და გასტრონომიას. ჩვენი მისამართია "
-"აბაშის რაიონი სოფელი მარანი მე-7 ქუჩა ბინა  №18,\n"
-"    მარანთან ერთად გვაქვს საოჯახო სასტუმრო და ღვინის სადეგუსტაციო სივრცე,"
-" სადაც სტუმრებს შეუძლიათ დააგემოვნონ,\n"
-"    როგორც აღმოსავლეთ, ასევე დასავლეთ საქართველოს უნიკალური ყურძნის "
-"ჯიშებისგან დაყენებული ღვინოები. წლების განმავლობაში\n"
-"    დაგროვილი გამოცდილება გვაძლევს საშუალებას დავამზადოთ ღვინო ტრადიციული"
-" და ევროპული მეთოდით, ამისთვის ვიყენებთ\n"
-"     სხვადასხვა რეგიონის ჯიშის ყურძენს ესენია: რქაწითელი, საფერავი,\n"
-"    ცოლიკოური, ციცქა, კაბერნე, თავკვერი, კახური მწვანე. ღვინოები "
-"დაყენებულია კახური (ქვევრში), იმერული და კლასიკური ტექნოლოგიით.\n"
-"    მარანს გააჩნია საკუთარი ვენახები იმერეთში, ასევე შევისყიდით "
-"სხვადასხვა რეგიონებიდან, სანდო მევენახეებისგან.\n"
-"    დეგუსტაციები ტარდება ყოველდღიურად, 13სთ-დან 21სთ-მდე.\n"
-"    სტუმრებს დეგუსტაციის შემდეგ შესაძლებლობა ეძლევათ თავად შეარჩიონ და "
-"შეიძინონ, ჩვენს მიერ ბოთლში ჩამოსხმული\n"
-"    ნატურალური ღვინოები.\n"
-"    'თაზოს მარან'-ის  საოჯახო სასტუმროს გააჩნია ოთხი ორკაციანი ნომერი, "
-"ყველა საჭირო ივენტარით და პირობებით, ასევე ტერასა საიდანაც\n"
-"    იშლება ლამაზი ხედები."
+"               ქართული ვაზის ჯიშებისგან ტრადიციული მეთოდებით დაყენებული "
+"ღვინო წარმოადგენს ჩვენს პროდუქტს."
 msgstr ""
 
-#: src/templates/main/about.html:41
+#: src/templates/main/about.html:23
+msgid ""
+"ჩვენთვის პირველ რიგში მნიშვნელოვანია ხარისხი და არა რაოდენობა. საოჯახო "
+"მეღვინეობა ღვინოსთან ერთად ვიზიტორებს სთავაზობს\n"
+"               განთავსებას, შემეცნებით აქტივობებს და გასტრონომიას."
+msgstr ""
+
+#: src/templates/main/about.html:25
+msgid ""
+"ჩვენი მისამართია აბაშის რაიონი სოფელი მარანი მე-7 ქუჩა ბინა  №18,\n"
+"               მარანთან ერთად გვაქვს საოჯახო სასტუმრო და ღვინის "
+"სადეგუსტაციო სივრცე, სადაც სტუმრებს შეუძლიათ დააგემოვნონ,\n"
+"               როგორც აღმოსავლეთ, ასევე დასავლეთ საქართველოს უნიკალური "
+"ყურძნის ჯიშებისგან დაყენებული ღვინოები."
+msgstr ""
+
+#: src/templates/main/about.html:28
+msgid ""
+" წლების განმავლობაში\n"
+"              დაგროვილი გამოცდილება გვაძლევს საშუალებას დავამზადოთ ღვინო "
+"ტრადიციული და ევროპული მეთოდით, ამისთვის ვიყენებთ\n"
+"              სხვადასხვა რეგიონის ჯიშის ყურძენს ესენია: რქაწითელი, "
+"საფერავი,\n"
+"              ცოლიკოური, ციცქა, კაბერნე, თავკვერი, კახური მწვანე."
+msgstr ""
+
+#: src/templates/main/about.html:32
+msgid ""
+"ღვინოები დაყენებულია კახური (ქვევრში), იმერული და კლასიკური ტექნოლოგიით.\n"
+"              მარანს გააჩნია საკუთარი ვენახები იმერეთში, ასევე შევისყიდით"
+" სხვადასხვა რეგიონებიდან, სანდო მევენახეებისგან.\n"
+"              დეგუსტაციები ტარდება ყოველდღიურად, 13სთ-დან 21სთ-მდე."
+msgstr ""
+
+#: src/templates/main/about.html:35
+msgid ""
+" სტუმრებს დეგუსტაციის შემდეგ შესაძლებლობა ეძლევათ თავად შეარჩიონ და "
+"შეიძინონ, ჩვენს მიერ ბოთლში ჩამოსხმული\n"
+"              ნატურალური ღვინოები.\n"
+"              'თაზოს მარან'-ის  საოჯახო სასტუმროს გააჩნია ოთხი ორკაციანი "
+"ნომერი, ყველა საჭირო ივენტარით და პირობებით, ასევე ტერასა საიდანაც\n"
+"              იშლება ლამაზი ხედები."
+msgstr ""
+
+#: src/templates/main/about.html:44
 msgid "ონლაინ პროდუქტის შესაძენად საჭიროა გაიაროთ ავტორიზაცია"
 msgstr ""
 
-#: src/templates/main/about.html:43
+#: src/templates/main/about.html:46
 msgid "დააჭირე აქ"
 msgstr ""
 
-#: src/templates/main/about.html:48
+#: src/templates/main/about.html:51
 msgid "რას გთავაზობთ?"
 msgstr ""
 
-#: src/templates/main/about.html:54
+#: src/templates/main/about.html:57
 msgid "მომსახურება"
 msgstr ""
 
-#: src/templates/main/about.html:56
+#: src/templates/main/about.html:59
 msgid "საოჯახო სასტუმრო"
 msgstr ""
 
-#: src/templates/main/about.html:57
+#: src/templates/main/about.html:60
 msgid "გასტროტურიზმი"
 msgstr ""
 
-#: src/templates/main/about.html:58
+#: src/templates/main/about.html:61
 msgid "შემეცნებითი აქტივობები"
 msgstr ""
 
-#: src/templates/main/about.html:59
+#: src/templates/main/about.html:62
 msgid "დეგუსტაცია"
 msgstr ""
 
-#: src/templates/main/about.html:63
+#: src/templates/main/about.html:66
 msgid "პროდუქტი"
 msgstr ""
 
-#: src/templates/main/about.html:65 src/templates/products/products.html:23
+#: src/templates/main/about.html:68 src/templates/products/products.html:23
 msgid "ღვინო"
 msgstr ""
 
-#: src/templates/main/about.html:66
+#: src/templates/main/about.html:69
 msgid "ღვინის ტკბილისგან დამზადებული ტკბილეული"
 msgstr ""
 
-#: src/templates/main/about.html:67
+#: src/templates/main/about.html:70
 msgid "სხვა ალკოჰოლური სასმელები"
 msgstr ""
 
-#: src/templates/main/about.html:68
+#: src/templates/main/about.html:71
 msgid "ტრადიციული სამზარეულო"
 msgstr ""
 
@@ -312,16 +334,16 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: src/templates/products/products.html:46
-msgid "Add"
-msgstr ""
-
-#: src/templates/products/products.html:49
+#: src/templates/products/products.html:47
 msgid "Buy"
 msgstr ""
 
-#: src/templates/products/products.html:51
+#: src/templates/products/products.html:49
 msgid "add to cart"
+msgstr ""
+
+#: src/templates/products/products.html:58
+msgid "Add Product"
 msgstr ""
 
 #: src/templates/products/view_product.html:22
@@ -332,72 +354,72 @@ msgstr ""
 msgid "კატეგორია"
 msgstr ""
 
-#: src/views/auth/forms.py:85
+#: src/views/auth/forms.py:65 src/views/auth/forms.py:118
 msgid "პაროლი უნდა შეიცავდეს დიდ ასოებს"
 msgstr ""
 
-#: src/views/auth/forms.py:87
+#: src/views/auth/forms.py:67 src/views/auth/forms.py:120
 msgid "პაროლი უნდა შეიცავდეს პატარა ასოებს"
 msgstr ""
 
-#: src/views/auth/forms.py:89
+#: src/views/auth/forms.py:69 src/views/auth/forms.py:122
 msgid "პაროლი უნდა შეიცავდეს ციფრებს"
 msgstr ""
 
-#: src/views/auth/forms.py:91
+#: src/views/auth/forms.py:71 src/views/auth/forms.py:124
 msgid "პაროლი უნდა შეიცავდეს სიმბოლოებს"
 msgstr ""
 
-#: src/views/auth/routes.py:25
+#: src/views/auth/routes.py:29
 msgid "აქტივაციის ლინკი გამოგზავნილია"
 msgstr ""
 
-#: src/views/auth/routes.py:42
+#: src/views/auth/routes.py:47
 msgid "* აქტივაციის კოდი გამოგზავნილია"
 msgstr ""
 
-#: src/views/auth/routes.py:56
+#: src/views/auth/routes.py:62
 msgid "* აქტივაციის კოდი არასწორია ან გაუვიდა ვადა"
 msgstr ""
 
-#: src/views/auth/routes.py:61
+#: src/views/auth/routes.py:67
 msgid "* მომხმარებელი უკვე გააქტიურებულია"
 msgstr ""
 
-#: src/views/auth/routes.py:76
+#: src/views/auth/routes.py:83
 msgid "ეს მომხმარებელი ვერ მოიძებნა"
 msgstr ""
 
-#: src/views/auth/routes.py:80
+#: src/views/auth/routes.py:87
 msgid "ელ-ფოსტა არ დადასტურდა"
 msgstr ""
 
-#: src/views/auth/routes.py:84
+#: src/views/auth/routes.py:91
 msgid "თქვენ წარმატებით გაიარეთ ავტორიზაცია!"
 msgstr ""
 
-#: src/views/auth/routes.py:92
+#: src/views/auth/routes.py:99
 msgid "პაროლი არასწორია"
 msgstr ""
 
-#: src/views/auth/routes.py:102
+#: src/views/auth/routes.py:107
 msgid "თქვენ გამოხვედით საიტიდან"
 msgstr ""
 
-#: src/views/auth/routes.py:114
+#: src/views/auth/routes.py:119
 msgid "* პაროლის აღდგენის კოდი გამოგზავნილია"
 msgstr ""
 
-#: src/views/auth/routes.py:130
+#: src/views/auth/routes.py:134
 msgid "აქტივაციის კოდი არასწორია ან გაუვიდა ვადა"
 msgstr ""
 
-#: src/views/auth/routes.py:135
+#: src/views/auth/routes.py:139
 msgid "მომხმარებელი ვერ მოიძებნა"
 msgstr ""
 
-#: src/views/auth/routes.py:144
-msgid " პაროლი შეიქმნა წარმატებით"
+#: src/views/auth/routes.py:149
+msgid "პაროლი შეიქმნა წარმატებით"
 msgstr ""
 
 #: src/views/main/routes.py:36

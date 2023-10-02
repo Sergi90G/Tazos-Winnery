@@ -141,7 +141,7 @@ def reset_password(reset_key):
 
     form = ResetPasswordForm()
     if form.validate_on_submit():
-        # Update the user's password in the database
+
       user.password = form.new_password.data
       db.session.commit()
 

@@ -31,12 +31,12 @@
         </div>
   </div>
 
-   <div class="language-flags">
-    <a class="js-language-select"  onclick="changeLanguage('ka')">
+  <div class="language-flags">
+    <a href="{{ url_for('main.change_language', language='ka') }}">
         <img src="{{ url_for('static', filename='images/flags/ge.png') }}"
              alt="GEO" title="GEO" style="width: 30px; height: 19px;">
     </a>
-    <a class="js-language-select"  onclick="changeLanguage('en')">
+    <a href="{{ url_for('main.change_language', language='en') }}">
         <img src="{{ url_for('static', filename='images/flags/en.png') }}"
              alt="ENG" title="ENG" style="width: 30px; height: 19px;">
     </a>

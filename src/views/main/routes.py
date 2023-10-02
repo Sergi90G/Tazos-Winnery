@@ -68,11 +68,9 @@ def about():
 
     return render_template("about.html", form=form,  text=text)
 
-@main_blueprint.route("/change_language")
-def change_language():
-    if session['locale'] == 'ka':
-        session['locale'] = 'en'
-    else:
-        session['locale'] = 'ka'
+@main_blueprint.route("/change_language/<string:language>")
+def change_language(language):
+    if language in ['ka', 'en']:
+        session['locale'] = language
 
     return redirect(url_for('main.index'))
