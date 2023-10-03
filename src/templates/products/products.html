@@ -22,6 +22,13 @@
     <div class="row">
         <h1>{{ _("ღვინო") }}</h1>
         <hr>
+      <div class="add-product">
+                    {% if current_user.is_authenticated and current_user.role.name == "admin" %}
+                        <a href="{{ url_for('products.add_product') }}"
+                           class="btn btn-success">{{ _("Add Product") }}</a>
+                    {% endif %}
+            </div>
+    <hr>
         <div class="card-container">
             {% for product in prlist %}
                 <div class="card square-card">
@@ -52,13 +59,7 @@
                 </div>
 
             {% endfor %}
-                <div class="add-product">
-                    {% if current_user.is_authenticated and current_user.role.name == "admin" %}
-                        <a href="{{ url_for('products.add_product') }}"
-                           class="btn btn-success">{{ _("Add Product") }}</a>
-                    {% endif %}
-                <hr>
-            </div>
+
         </div>
     </div>
 
